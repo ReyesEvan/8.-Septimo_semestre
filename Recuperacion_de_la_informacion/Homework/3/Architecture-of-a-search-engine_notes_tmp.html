@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Architecture-of-a-search-engine_notes.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="architecture-of-a-search-engine">Architecture of a search engine</h1>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#architecture-of-a-search-engine">Architecture of a search engine</a>
+<ul>
+<li><a href="#table-of-contents">Table of contents</a></li>
+<li><a href="#basic-building-blocks">Basic building blocks</a>
+<ul>
+<li><a href="#indexing-process">Indexing process</a>
+<ul>
+<li><a href="#text-acquisition">Text acquisition:</a>
+<ul>
+<li><a href="#crawler">Crawler</a></li>
+<li><a href="#feeds">Feeds</a></li>
+<li><a href="#conversion">Conversion</a></li>
+<li><a href="#document-data-store">Document data store</a></li>
+</ul>
+</li>
+<li><a href="#text-transformation">Text transformation:</a>
+<ul>
+<li><a href="#parser">Parser</a></li>
+<li><a href="#stopping">Stopping</a></li>
+<li><a href="#stemming">Stemming</a></li>
+<li><a href="#link-extraction-and-analysis">Link extraction and analysis</a></li>
+<li><a href="#information-extraction">Information extraction</a></li>
+<li><a href="#classifier">Classifier</a></li>
+</ul>
+</li>
+<li><a href="#index-creation">Index creation:</a>
+<ul>
+<li><a href="#document-statistics">Document statistics</a></li>
+<li><a href="#weighting">Weighting</a></li>
+<li><a href="#inversion">Inversion</a></li>
+<li><a href="#index-distribution">Index distribution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#query-process">Query process</a>
+<ul>
+<li><a href="#user-interaction">User interaction</a>
+<ul>
+<li><a href="#query-input">Query input</a></li>
+<li><a href="#query-transformation">Query transformation</a></li>
+<li><a href="#results-output">Results output</a></li>
+</ul>
+</li>
+<li><a href="#ranking">Ranking</a>
+<ul>
+<li><a href="#scoring--query-processing">Scoring -query processing</a></li>
+<li><a href="#performance-optimization">Performance optimization</a></li>
+<li><a href="#distribution">Distribution</a></li>
+</ul>
+</li>
+<li><a href="#evaluation">Evaluation</a>
+<ul>
+<li><a href="#logging">Logging</a></li>
+<li><a href="#ranking-analysis">Ranking analysis</a></li>
+<li><a href="#performance-analysis">Performance analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>A software architecture generally consists of:</p>
+<ul>
+<li>Software components</li>
+<li>Interfaces provided by those components</li>
+<li>Relationships between them</li>
+</ul>
+<p>The two primary goals of a search engine are:</p>
+<ul>
+<li>Effectiveness (<em>quality</em>): To be able to retrieve the most relevant set of documents possible for a query</li>
+<li>Efficiency (<em>speed</em>): To process queries from users as quicky as possible
+Although not official, it is required as well that the system immediately react to changes in documents</li>
+</ul>
+<p>Search engines employ <strong>specialized data structures</strong> that are optimized for <strong>fast retrieval</strong>.</p>
+<h2 id="basic-building-blocks">Basic building blocks</h2>
+<p>Search engine components support two <strong>major functions</strong>:</p>
+<ul>
+<li><a href="#indexing-process"><strong>Indexing process:</strong></a> <em><strong>Builds the structures</strong></em> that enable searching</li>
+<li><a href="#query-process"><strong>Query process:</strong></a> <em><strong>Uses those structures</strong></em> and a person's query to produce a ranked list of documents.</li>
+</ul>
+<h3 id="indexing-process">Indexing process</h3>
+<p><img src="file:///home/reyes/8.-Septimo_semestre/Recuperacion_de_la_informacion/Homework/3/indexing-process.png" alt="Indexing process">
+The high-level building blocks of the indexing process are <a href="#text-acquisition">text acquisition</a>, <a href="#text-transformation">text transformation</a> and <a href="#index-creation">index creation</a></p>
+<h4 id="text-acquisition">Text acquisition:</h4>
+<ul>
+<li>To identify and make available the documents that will be searched.</li>
+<li>Often, it will require building a collection by <em>crawling</em> or scanning the source of information.</li>
+<li>Creates a document data store, which contains for all documents:
+<ul>
+<li>Text</li>
+<li>Metadata - Information about a document that is not part of the text content, but stores information about the document itself
+<ul>
+<li>Document type</li>
+<li>Document structure</li>
+<li>Document length</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="crawler">Crawler</h5>
+<p>Identifies and acquires documents for the search engine.
+A web crawler is designed to follow the links on the web pages to discover and download new pages.</p>
+<ul>
+<li>Site search crawler - are restricted to a single site</li>
+<li>Focused (topical) web crawler - use classification techniques to restrict the pages that are visited to those that are likely to be about a specific topic</li>
+<li>Enterprise document crawler - follows links to discover both external and internal (i.e., restricted to the corporate intranet) pages but scans other company information as well</li>
+<li>Document crawler - similar to the above, but in this case only the user’s personal directories need tobe scanned</li>
+</ul>
+<h5 id="feeds">Feeds</h5>
+<p>Document feeds are a mechanism for accessing a real-time stream of documents. A common standard is RSS</p>
+<h5 id="conversion">Conversion</h5>
+<p>Documents found by a crawler usually are in several formats and need to be converted to plain text for its successful analysis. It also requires to convert the documents to a consistent encoding scheme before further processing</p>
+<h5 id="document-data-store">Document data store</h5>
+<p>It is a database created to manage large numbers of documents and its structured data. It usually stores links and its anchor text. This saves the search engine the task of access and reprocess the original documents for each query</p>
+<h4 id="text-transformation">Text transformation:</h4>
+<ul>
+<li>Transforms documents into:
+<ul>
+<li><em>Index terms</em>: Parts of a document that are stored in the index and used in searching. The set of all the terms is called <em>index vocabulary</em></li>
+<li><em>Feature</em>: Part of a text document that is used to represent its content, which also describes an index term</li>
+</ul>
+</li>
+</ul>
+<h5 id="parser">Parser</h5>
+<p>Processes the sequence of text tokens to recognize structural elements (titles, figures, links, headings)</p>
+<h5 id="stopping">Stopping</h5>
+<p>Removes common words from the stream of tokens that become index terms (the, of, to, for)</p>
+<h5 id="stemming">Stemming</h5>
+<p>Groups words that are derived from a common stem (fish, fishing, fishes -&gt; fish)</p>
+<h5 id="link-extraction-and-analysis">Link extraction and analysis</h5>
+<p>Extraction means that the information (links, anchors) stored in the <a href="#document-data-store">document data store</a> can be indexed asides from the general text context. Whereas, analysis implies to provide the search engine with a rating of popularity (how important it is)</p>
+<h5 id="information-extraction">Information extraction</h5>
+<p>Used to identify terms that are more complex than single words</p>
+<h5 id="classifier">Classifier</h5>
+<p>Assigns predefined class labels to documents or parts of documents (sports, politics, business). Identifies spam and ads.</p>
+<h4 id="index-creation">Index creation:</h4>
+<ul>
+<li>Creates the <strong>indexes or data structures that enable fast searching</strong> from the output of the text transformation</li>
+<li>These indexes are supposed to be efficiently updated when new documents are acquired.</li>
+<li>The most popular form of index is called <em>inverted indexes</em>, they contain a list for every index term of the documents that contain that index term</li>
+</ul>
+<h5 id="document-statistics">Document statistics</h5>
+<p>Gathers and records statistical information about words, features and documents - counts index term ocurrences, positions where the index terms ocurred, concurrences over groups, etc.</p>
+<h5 id="weighting">Weighting</h5>
+<p>Reflects the relative importance of words in documents
+Uses <em>tf.idf</em> (term frequency.inverse document frequency)</p>
+<h5 id="inversion">Inversion</h5>
+<p><strong>Core of the indexing process.</strong>
+Changes the stream of <em>document-term information</em> (from text transformation) -into-&gt; <em>term-document information</em> (for the creation of inverted indexes)</p>
+<h5 id="index-distribution">Index distribution</h5>
+<p>Distributes indexes across multiple nodes for enable parallelism</p>
+<h3 id="query-process">Query process</h3>
+<p><img src="file:///home/reyes/8.-Septimo_semestre/Recuperacion_de_la_informacion/Homework/3/query-process.png" alt="Query process">
+The major-components of the query process are <a href="#user-interaction">user interaction</a>, <a href="#ranking">ranking</a> and <a href="#evaluation">evaluation</a></p>
+<h4 id="user-interaction">User interaction</h4>
+<ul>
+<li>Provides the interface between the person doing the searching and the search engine</li>
+<li>Accepts the user's query and transforms it into index terms</li>
+<li>Takes the ranked list of documents from the search engine and organize it into the results shown to the user</li>
+</ul>
+<h5 id="query-input">Query input</h5>
+<p>Providex an interface and a parser for a <em>query language</em> (that contains a small number of operators that indiate the parser that the text should be treated in a special way)</p>
+<h5 id="query-transformation">Query transformation</h5>
+<p>Improves the initial query (before and after producing a document ranking). There are some techniques:</p>
+<ul>
+<li>Spell checking/query suggestion</li>
+<li>Query expansion</li>
+<li>Relevance feedback</li>
+</ul>
+<h5 id="results-output">Results output</h5>
+<p>Constructs the final display of ranked documents (from the ranking component), highlighting important words and adding relevant ads <em>(ew)</em></p>
+<h4 id="ranking">Ranking</h4>
+<p>Represents the core of the search engine</p>
+<ul>
+<li>Takes the transformed query from the user interaction component and generates a ranked list of documents using scores based on a retrieval model</li>
+<li>Its <strong>efficiency depends on the indexes</strong> and the <strong>effectiveness depends on the retrieval model</strong></li>
+</ul>
+<h5 id="scoring--query-processing">Scoring -query processing</h5>
+<p>Calculates scores for documents based on a retrieval model</p>
+<p><img src="file:///home/reyes/8.-Septimo_semestre/Recuperacion_de_la_informacion/Homework/3/popular-ranking-alg.png" alt="ranking"></p>
+<h5 id="performance-optimization">Performance optimization</h5>
+<p>Involves the design of ranking algorithms and the asociated indexes to decrease response time and increase query throughput</p>
+<h5 id="distribution">Distribution</h5>
+<p>Basically, it means to allocate queries that potentially can be reused.</p>
+<h4 id="evaluation">Evaluation</h4>
+<ul>
+<li>Measures and monitors effectiveness and efficiency</li>
+<li>Records and analyzes user behavior using log data</li>
+<li>The results are used to tune and improve the ranking component</li>
+</ul>
+<h5 id="logging">Logging</h5>
+<p>Store users' queries and their interactions with the search engine represents one of the most valuable sources of information. It helps to improve queries, advertising and find relevant documents (usually clicked results tend to be relevant)</p>
+<h5 id="ranking-analysis">Ranking analysis</h5>
+<p>Log data and explicit relevance judgements are used to measure the effectiveness of a ranking algorithm and allows to be compared against others</p>
+<h5 id="performance-analysis">Performance analysis</h5>
+<p>Involves monitoring and improving overall system performance</p>
+
+</body>
+</html>
