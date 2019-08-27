@@ -1,0 +1,24 @@
+/etc/fstab -> sda
+# <file system>             <mount point>  <type>  <options>  <dump>  <pass>
+UUID=7F53-657A                            /boot/efi      vfat    defaults,noatime 0 2
+UUID=21403809-3380-4932-819a-ab8ade810317 /              ext4    defaults,noatime,discard 0 1
+UUID=ae440b53-4f3d-48e1-aeea-f2b4b877f37e swap           swap    defaults,noatime,discard 0 2
+tmpfs                                     /tmp           tmpfs   defaults,noatime,mode=1777 0 0
+
+ls /dev/disk/by-uuid
+total 0
+lrwxrwxrwx 1 root root 10 Aug 26 21:04 086abb7d-d174-47d0-9271-55c8b6a286de -> ../../sdb3
+lrwxrwxrwx 1 root root 10 Aug 26 21:02 21403809-3380-4932-819a-ab8ade810317 -> ../../sda2
+lrwxrwxrwx 1 root root 10 Aug 26 21:04 5f2997f0-ea1e-4b78-bb8f-bff1888a4ec0 -> ../../sdb2
+lrwxrwxrwx 1 root root 10 Aug 26 21:02 7F53-657A -> ../../sda1
+lrwxrwxrwx 1 root root 10 Aug 26 21:02 ae440b53-4f3d-48e1-aeea-f2b4b877f37e -> ../../sda3
+lrwxrwxrwx 1 root root 10 Aug 26 21:04 D4E6-71B3 -> ../../sdb1
+
+/dev/sda1: UUID="7F53-657A" TYPE="vfat" PARTUUID="f7f3ea7c-caff-40bb-b679-dfcb57871941"
+/dev/sda2: UUID="21403809-3380-4932-819a-ab8ade810317" TYPE="ext4" PARTUUID="55634af6-7371-41f9-a94e-e38a127ef7d9"
+/dev/sda3: UUID="ae440b53-4f3d-48e1-aeea-f2b4b877f37e" TYPE="swap" PARTUUID="c619b5f5-d3dd-48fa-8da6-bce37c3a098e"
+
+/dev/sdb1: UUID="D4E6-71B3" TYPE="vfat" PARTUUID="9a051da0-975e-42d5-9358-67ca2f3f7788"
+/dev/sdb2: UUID="5f2997f0-ea1e-4b78-bb8f-bff1888a4ec0" TYPE="swap" PARTUUID="2748e2cd-9881-426a-b2cb-118723506c4a"
+/dev/sdb3: UUID="086abb7d-d174-47d0-9271-55c8b6a286de" TYPE="ext4" PARTUUID="7fe241f4-896c-40bd-8b81-74d70663684b"
+
