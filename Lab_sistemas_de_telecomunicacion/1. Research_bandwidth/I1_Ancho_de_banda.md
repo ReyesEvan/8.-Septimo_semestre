@@ -15,7 +15,7 @@
   - [Bibliografía](#bibliograf%c3%ada)
 
 ## Resumen ejecutivo
-<!-- TODO: when finishing all the points -->
+<!-- TODO: wheshing all the points -->
 
 ## Análisis teórico
 
@@ -25,7 +25,18 @@ El concepto de ancho de banda ha sido definido de distintas maneras desde la con
 &ensp;&ensp;&ensp;&ensp;Todas estas definiciones difieren ligeramente dependiendo del enfoque con que los autores escriben o que atañe a sus obras, no obstante, es posible advertir un patrón formado en todas ellas, dado que todos afirman ─aunque en diferentes términos─ la existencia de un **rango o intervalo de frecuencias** mediante el cual se **transmite información** a través de un medio o sistema.
 
 ### Unidades de medición del ancho de banda.
-<!-- * waiting for Erick -->
+La medición del ancho de banda puede variar según el contexto en el que se aplique.
+Para señales analógicas, y estudio de señales, el ancho de banda es la diferencia entre la mayor y menor frecuencia de una onda. Esto es medido normalmente en hertz (Hz).
+Por otro lado, el ancho de banda de red es medido normalmente en bits por segundo, pero también bytes por segundo es usado frecuentemente. Cabe recalcar que megabit y megabyte no son equivalentes, ya que 8 bits = 1 Byte.
+
+Otra medida popular es el método 95% percentil. Éste permite medir el promedio de ancho de banda en un 95% de un periodo de tiempo especificado. Para éste método, el ancho de banda usado el 95% del tiempo es el ancho de banda real usado. El otro 5% son ráfagas de tráfico que son descartadas. Para obtenerlo, los datos son ordenados de menor a mayor, y el 5% más alto son ignorados. Posteriormente se realiza un promedio de los números restantes, y el resultado será el ancho de banda real.
+
+Una medida distinta es el método de transferencia total, en el cual se mide la cantidad de datos que un dispositivo puede transferir en cierto periodo de tiempo. Usualmente se usan periodos largos, y no es muy común usarlo excepto para escenarios específicos.
+Existen también otras estadísticas que nos pueden dar más información sobre el ancho de banda de una conexión:
+- Máximo Teórico: La tasa de transmisión que la transferencia podría tener en escenarios ideales y bajo las circunstancias adecuadas. Es difícil que una red o una transmisión llegue al máximo teórico debido a limitaciones físicas, por lo que normalmente este dato se usa para fines de comparación cuando la instalación está siendo probada.
+- Ancho de banda efectivo: Es el ancho de banda más rápido y estable que se puede alcanzar.
+- Rendimiento: Mide la relación entre los datos que se están transmitiendo y el tiempo que toma mandarlos.
+- Goodput: Mide la cantidad de datos relevantes que se están transmitiendo. Sirve para determinar la relación entre esos datos y las retransmisiones o pérdidas de paquetes.
 
 ### Aplicación del concepto de ancho de banda.
 Según afirma Stremler (1982) es imposible construir un sistema de ancho de banda infinito debido a limitaciones físicas y, dado que uno de los objetivos principales cuando se transmite información es conseguir que ésta sea recibida sin distorsión, es preciso que «el ancho de banda de un sistema sea suficientemente amplio para pasar todas las frecuencias de información significativas» como bien asevera Tomasi (1994). Stanley and Jeffords (2006) proponen un ejemplo para ilustrar este hecho:  
@@ -41,26 +52,71 @@ Por lo tanto, es posible afirmar que la importancia del ancho de banda recae en 
 
 
 ### Unidades de medición de la cantidad de información transmitida (digital).
+Para responder adecuadamente esta consulta es necesario recurrir a varios conceptos. El más importante de ellos es llamado *Capacidad de canal* que es «la velocidad límite de transmisión de información a través de un canal» según Stremler (1982), la definición de este concepto radica en la inversión del teorema de C. E. Shannon que establecería que «no es posible transmitir mensajes sin errores si R > C  ─donde R es la razón de entropía y C es la capacidad del canal─» (Stremler, 1982)
 
+Para responder adecuadamente esta consulta es necesario recurrir a varios conceptos. El primero de ellos es llamado *Capacidad de la información* que es «el número de símbolos independientes que pueden pasarse, a través del sistema, en una unidad de tiempo determinada» (Tomasi, 1994). Debido a que el símbolo fundamental es el digito binario
 
 ### Caso de estudio: “El sistema de comunicación Ethernet con par trenzado”, investigar ancho de banda  y capacidad de transmisión de datos digitales a través de la línea Ethernet.
 <!-- * waiting for Erick -->
 
 
 ### Efecto del ruido en el ancho de banda.
+Wayne Tomasi (1994) define al ruido eléctrico como _«cualquier energía eléctrica no deseada presente en la pasabanda útil de un circuito de comunicaciones»_. Suele dividirse en dos grandes grupos: _correlacionado_ y _no correlacionado_, pertenece al primero si existe una relación entre la señal y el ruido y al segundo en el caso contrario. A depender de la fuente, existen algunos otras clasificaciones, entre las que destacan:
+- Ruido externo
+  - Ruido atmosférico
+  - Ruido galáctico
+  - Ruido solar
+  - Ruido producido por el hombre
+- Ruido interno
+  - Ruido térmico
+  - Ruido de disparo
+  - Ruido de tiempo de tránsito
 
+Si bien es cierto que la distorsión que el ruido puede provocar en una señal analógica depende ampliamente de su potencia en relación con la potencia de la misma señal, esta distorsión **también depende de la distribución espectral del ruido en relación con el ancho de banda** utilizado por el sistema que transmite esta señal. En general, la señal recibida estará compuesta de la señal originalmente enviada junto con todas las distorsiones adquiridas mientras ésta transitaba por su medio hasta su destino, de las cuales la mayoría son ocasionadas por ruido que si, como se ha mencionado antes, su distribución espectral coincide con el rango de frecuencias que el ancho de banda admite, entonces las señales que transiten por esa vía se verán más afectadas por estas **deformaciones**.
 
 ### Concepto de relación de Señal a Ruido de un canal o línea de transmisión.
 <!-- * waiting for Erick -->
 
+| DOC ID | T1   | T2   | T3   | T4   | T5   | T6   | T7   | T8   | T9   | T10  | T11  | T12  | T13  | T14  | T15  | T16  | T17  | T18  |
+| ------ | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| D1     | .477 | .176 | .477 | .477 | .477 | .477 | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    |
+| D2     | 0    | 0    | 0    | 0    | 0    | 0    | .477 | .477 | .477 | .477 | .477 | .477 | .176 | 0    | 0    | 0    | 0    | 0    |
+| D3     | 0    | .176 | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | .176 | .477 | .477 | .477 | .477 | .477 |
+| Query  | .477 | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | .176 | 0    | .477 | 0    | 0    | 0    |
+
+| DOC ID | T1   | T2   | T3   | T4   | T5   | T6   | T7   | T8   | T9   | T10  | T11  | T12  | T13  | T14  | T15  | T16  | T17  | T18  |
+| ------ | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| D1     | .477 | .176 | .477 | .477 | .477 | .477 | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    |
+| D2     | 0    | 0    | 0    | 0    | 0    | 0    | .477 | .477 | .477 | .477 | .477 | .477 | .176 | 0    | 0    | 0    | 0    | kv0    |
+| D3     | 0    | .176 | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | .176 | .477 | .477 | .477 | .477 | .477 |
+| Query  | .477 | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | .176 | 0    | .477 | 0    | 0    | 0    |
 
 ## Conclusiones
+- as 
+- asdas
+- asd
+  - sadkass
+    - asjdk
+
+
+
+- [ ] asdjaks
+- [ ] 
+
+# Heading
 
 
 ## Bibliografía
-
 - Tomasi, W. (1994). *Fundamentals of electronic communications systems.* Englewood Cliffs, N.J.: Prentice Hall, pp.4, 5.
 - Stremler, F. (1982). *Sistemas de comunicación*. Massachusetts: Fondo educativo interamericano, pp.115, 116.
 - Comer, D. (2015). *Computer Networks and Internets.* 6th ed. Prentice Hall, p.99.
 - Rosengrant, M. (2007). *Introduction to telecommunications.* Upper Saddle River, New Jersey: Pearson Prentice Hall.
 - Stanley, W. and Jeffords, J. (2006). *Electronic communications: Principles and systems* Clifton Park: Thomson Delmar Learning, p.4.
+- Proakis, J. and Saheli, M. (2014). *Fundamentals of communication systems*. 2nd ed. Boston: Pearson, p.664.
+- Networks, P. and Psychz Networks (2019). *What is The 95th Percentile Bandwidth Metering?* .... [online] Psychz Networks. Available at: https://www.psychz.net/client/kb/en/what-is-the-95th-percentile-bandwidth-metering.html [Accessed 28 Aug. 2019].
+- Veber. (2019). *What is Bandwidth and How is it Measured?*. [online] Available at: https://www.veber.co.uk/what-is-bandwidth-and-how-is-it-measured/ [Accessed 28 Aug. 2019].
+- Paessler. (2019). *What is Bandwidth? - Definition and Details.* [online] Available at: https://www.paessler.com/it-explained/bandwidth [Accessed 28 Aug. 2019].
+- Toppr-guides. (2019). *Bandwidth of Signals: Definition, Concepts, Applications, Videos, Examples.* [online] Available at: https://www.toppr.com/guides/physics/communication-systems/bandwidth-of-signals/ [Accessed 28 Aug. 2019].
+
+
+<!-- To include later: "The basic limi tation that noise causes in a communication channel is not the reliability of communication, but on the speed of communication" Shannon (1948) by John Proakis -->

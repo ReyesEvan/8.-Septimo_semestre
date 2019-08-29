@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>I1_Ancho_de_banda.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="ancho-de-banda-y-capacidad-de-informaci%C3%B3n">Ancho de banda y capacidad de información</h1>
+<h2 id="tabla-de-contenidos">Tabla de contenidos</h2>
+<ul>
+<li><a href="#resumen-ejecutivo">Resumen ejecutivo</a></li>
+<li><a href="#an%c3%a1lisis-te%c3%b3rico">Análisis teórico</a>
+<ul>
+<li><a href="#definici%c3%b3n-de-ancho-de-banda">Definición de ancho de banda.</a></li>
+<li><a href="#unidades-de-medici%c3%b3n-del-ancho-de-banda">Unidades de medición del ancho de banda.</a></li>
+<li><a href="#aplicaci%c3%b3n-del-concepto-de-ancho-de-banda">Aplicación del concepto de ancho de banda.</a></li>
+<li><a href="#capacidad-de-transmisi%c3%b3n-de-informaci%c3%b3n-de-un-canal-o-l%c3%adnea-y-su-relaci%c3%b3n-con-el-ancho-de-banda-de-la-misma-enfoque-anal%c3%b3gico-y-enfoque-digital">Capacidad de transmisión de información de un canal o línea y su relación con el ancho de banda de la misma, enfoque analógico y enfoque digital.</a></li>
+<li><a href="#unidades-de-medici%c3%b3n-de-la-cantidad-de-informaci%c3%b3n-transmitida-digital">Unidades de medición de la cantidad de información transmitida (digital).</a></li>
+<li><a href="#caso-de-estudio-el-sistema-de-comunicaci%c3%b3n-ethernet-con-par-trenzado-investigar-ancho-de-banda-y-capacidad-de-transmisi%c3%b3n-de-datos-digitales-a-trav%c3%a9s-de-la-l%c3%adnea-ethernet">Caso de estudio: “El sistema de comunicación Ethernet con par trenzado”, investigar ancho de banda y capacidad de transmisión de datos digitales a través de la línea Ethernet.</a></li>
+<li><a href="#efecto-del-ruido-en-el-ancho-de-banda">Efecto del ruido en el ancho de banda.</a></li>
+<li><a href="#concepto-de-relaci%c3%b3n-de-se%c3%b1al-a-ruido-de-un-canal-o-l%c3%adnea-de-transmisi%c3%b3n">Concepto de relación de Señal a Ruido de un canal o línea de transmisión.</a></li>
+</ul>
+</li>
+<li><a href="#conclusiones">Conclusiones</a></li>
+<li><a href="#bibliograf%c3%ada">Bibliografía</a></li>
+</ul>
+<h2 id="resumen-ejecutivo">Resumen ejecutivo</h2>
+<!-- TODO: wheshing all the points -->
+<h2 id="an%C3%A1lisis-te%C3%B3rico">Análisis teórico</h2>
+<h3 id="definici%C3%B3n-de-ancho-de-banda">Definición de ancho de banda.</h3>
+<p>El concepto de ancho de banda ha sido definido de distintas maneras desde la concepción de dicha noción. De acuerdo con Wayne Tomasi (1994), el <em>ancho de banda</em> es una de las más signiticativas limitantes en el rendimiento de un sistema, junto con el <em>ruido</em>, y es definido como <em>«la banda de paso mínima (rango de frecuencias) requerida para propagar la información de la fuente a través del sistema»</em>. Por su parte, Ferrel Stremler (1982) define al ancho de banda W de un sistema como <em>«el intervalo de frecuencias <strong>positivas</strong> en que la magnitud <code>|H(ω)|</code> se mantiene dentro de determinado factor numérico»</em>. Douglas Comer (2015) diferencía al definir al ancho de banda entre 'ancho de banda analógica' y 'ancho de banda de red', define al primero como <em>«la diferencia entre la más alta y la más baja frecuencia de las partes constituyentes»</em>, mientras que asegura que la industria de redes computacionales suele referirse a la <em>velocidad de datos</em> cuando habla de <em>ancho de banda de red</em>. Finalmente, Rosengrant (2007) define al ancho de banda como «la capacidad de transmisión de información de un medio».</p>
+<p>    Todas estas definiciones difieren ligeramente dependiendo del enfoque con que los autores escriben o que atañe a sus obras, no obstante, es posible advertir un patrón formado en todas ellas, dado que todos afirman ─aunque en diferentes términos─ la existencia de un <strong>rango o intervalo de frecuencias</strong> mediante el cual se <strong>transmite información</strong> a través de un medio o sistema.</p>
+<h3 id="unidades-de-medici%C3%B3n-del-ancho-de-banda">Unidades de medición del ancho de banda.</h3>
+<p>La medición del ancho de banda puede variar según el contexto en el que se aplique.
+Para señales analógicas, y estudio de señales, el ancho de banda es la diferencia entre la mayor y menor frecuencia de una onda. Esto es medido normalmente en hertz (Hz).
+Por otro lado, el ancho de banda de red es medido normalmente en bits por segundo, pero también bytes por segundo es usado frecuentemente. Cabe recalcar que megabit y megabyte no son equivalentes, ya que 8 bits = 1 Byte.</p>
+<p>Otra medida popular es el método 95% percentil. Éste permite medir el promedio de ancho de banda en un 95% de un periodo de tiempo especificado. Para éste método, el ancho de banda usado el 95% del tiempo es el ancho de banda real usado. El otro 5% son ráfagas de tráfico que son descartadas. Para obtenerlo, los datos son ordenados de menor a mayor, y el 5% más alto son ignorados. Posteriormente se realiza un promedio de los números restantes, y el resultado será el ancho de banda real.</p>
+<p>Una medida distinta es el método de transferencia total, en el cual se mide la cantidad de datos que un dispositivo puede transferir en cierto periodo de tiempo. Usualmente se usan periodos largos, y no es muy común usarlo excepto para escenarios específicos.
+Existen también otras estadísticas que nos pueden dar más información sobre el ancho de banda de una conexión:</p>
+<ul>
+<li>Máximo Teórico: La tasa de transmisión que la transferencia podría tener en escenarios ideales y bajo las circunstancias adecuadas. Es difícil que una red o una transmisión llegue al máximo teórico debido a limitaciones físicas, por lo que normalmente este dato se usa para fines de comparación cuando la instalación está siendo probada.</li>
+<li>Ancho de banda efectivo: Es el ancho de banda más rápido y estable que se puede alcanzar.</li>
+<li>Rendimiento: Mide la relación entre los datos que se están transmitiendo y el tiempo que toma mandarlos.</li>
+<li>Goodput: Mide la cantidad de datos relevantes que se están transmitiendo. Sirve para determinar la relación entre esos datos y las retransmisiones o pérdidas de paquetes.</li>
+</ul>
+<h3 id="aplicaci%C3%B3n-del-concepto-de-ancho-de-banda">Aplicación del concepto de ancho de banda.</h3>
+<p>Según afirma Stremler (1982) es imposible construir un sistema de ancho de banda infinito debido a limitaciones físicas y, dado que uno de los objetivos principales cuando se transmite información es conseguir que ésta sea recibida sin distorsión, es preciso que «el ancho de banda de un sistema sea suficientemente amplio para pasar todas las frecuencias de información significativas» como bien asevera Tomasi (1994). Stanley and Jeffords (2006) proponen un ejemplo para ilustrar este hecho:</p>
+<blockquote>
+<p>(...) asuma que un dado canal es una desigual línea de teléfoono que tiene una frecuencia de respuesta desde unos pocos cientos de hertz a algunos kilohertz. El canal puede ser adecuado para datos de voz simples, pero difícilmente serían suficientes para sonido de alta fidelidad o video de alta calidad.</p>
+<p>─Stanley and Jeffords, 2006</p>
+</blockquote>
+<p>Por lo tanto, es posible afirmar que la importancia del ancho de banda recae en su necesidad de ser considerada y determinada correcta y asertivamente, dado que el sistema depende de esa decisión para obtener resultados fidedignos en emisiones y recepciones de información.</p>
+<h3 id="capacidad-de-transmisi%C3%B3n-de-informaci%C3%B3n-de-un-canal-o-l%C3%ADnea-y-su-relaci%C3%B3n-con-el-ancho-de-banda-de-la-misma-enfoque-anal%C3%B3gico-y-enfoque-digital">Capacidad de transmisión de información de un canal o línea y su relación con el ancho de banda de la misma, enfoque analógico y enfoque digital.</h3>
+<!-- * waiting for Erick -->
+<h3 id="unidades-de-medici%C3%B3n-de-la-cantidad-de-informaci%C3%B3n-transmitida-digital">Unidades de medición de la cantidad de información transmitida (digital).</h3>
+<h3 id="caso-de-estudio-%E2%80%9Cel-sistema-de-comunicaci%C3%B3n-ethernet-con-par-trenzado%E2%80%9D-investigar-ancho-de-banda-y-capacidad-de-transmisi%C3%B3n-de-datos-digitales-a-trav%C3%A9s-de-la-l%C3%ADnea-ethernet">Caso de estudio: “El sistema de comunicación Ethernet con par trenzado”, investigar ancho de banda  y capacidad de transmisión de datos digitales a través de la línea Ethernet.</h3>
+<!-- * waiting for Erick -->
+<h3 id="efecto-del-ruido-en-el-ancho-de-banda">Efecto del ruido en el ancho de banda.</h3>
+<p>Wayne Tomasi define al ruido eléctrico como <em>«cualquier energía eléctrica no deseada presente en la pasabanda útil de un circuito de comunicaciones»</em>. Suele dividirse en dos grandes grupos: <em>correlacionado</em> y <em>no correlacionado</em>, pertenece al primero si existe una relación entre la señal y el ruido y al segundo en el caso contrario. A depender de la fuente,</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>a</td>
+<td>b</td>
+<td>c</td>
+</tr>
+<tr>
+<td>z</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>asd</td>
+<td>ter</td>
+<td>gfd</td>
+</tr>
+<tr>
+<td>value</td>
+<td>key</td>
+<td>caballo</td>
+</tr>
+<tr>
+<td>why</td>
+<td>is</td>
+<td>this</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">item 1</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">item 2</label></li>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2">item 3</label></li>
+</ul>
+<h3 id="concepto-de-relaci%C3%B3n-de-se%C3%B1al-a-ruido-de-un-canal-o-l%C3%ADnea-de-transmisi%C3%B3n">Concepto de relación de Señal a Ruido de un canal o línea de transmisión.</h3>
+<!-- * waiting for Erick -->
+<h2 id="conclusiones">Conclusiones</h2>
+<h2 id="bibliograf%C3%ADa">Bibliografía</h2>
+<ul>
+<li>Tomasi, W. (1994). <em>Fundamentals of electronic communications systems.</em> Englewood Cliffs, N.J.: Prentice Hall, pp.4, 5.</li>
+<li>Stremler, F. (1982). <em>Sistemas de comunicación</em>. Massachusetts: Fondo educativo interamericano, pp.115, 116.</li>
+<li>Comer, D. (2015). <em>Computer Networks and Internets.</em> 6th ed. Prentice Hall, p.99.</li>
+<li>Rosengrant, M. (2007). <em>Introduction to telecommunications.</em> Upper Saddle River, New Jersey: Pearson Prentice Hall.</li>
+<li>Stanley, W. and Jeffords, J. (2006). <em>Electronic communications: Principles and systems</em> Clifton Park: Thomson Delmar Learning, p.4.</li>
+<li>Networks, P. and Psychz Networks (2019). What is The 95th Percentile Bandwidth Metering? .... [online] Psychz Networks. Available at: https://www.psychz.net/client/kb/en/what-is-the-95th-percentile-bandwidth-metering.html [Accessed 28 Aug. 2019].</li>
+<li>Veber. (2019). What is Bandwidth and How is it Measured?. [online] Available at: https://www.veber.co.uk/what-is-bandwidth-and-how-is-it-measured/ [Accessed 28 Aug. 2019].</li>
+<li>Paessler. (2019). What is Bandwidth? - Definition and Details. [online] Available at: https://www.paessler.com/it-explained/bandwidth [Accessed 28 Aug. 2019].
+-Toppr-guides. (2019). Bandwidth of Signals: Definition, Concepts, Applications, Videos, Examples. [online] Available at: https://www.toppr.com/guides/physics/communication-systems/bandwidth-of-signals/ [Accessed 28 Aug. 2019].</li>
+</ul>
+
+</body>
+</html>
