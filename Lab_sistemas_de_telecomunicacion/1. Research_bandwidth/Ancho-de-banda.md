@@ -22,7 +22,7 @@ El presente reporte fue realizado para esclarecer y afianzar el dominio sobre el
 - Ruido
 - Línea o canal de transmisión
 
-El carácter del presente reporte es meramente ilustrativo y neutral. La información obtenida en libros impresos y sitios web es referenciada y se alenta al lector a visitar los sitios originales de donde la información científica fue obtenida para respaldar las aseveraciones realizadas alrededor de las nociones expuestas en este trabajo.
+El carácter del presente reporte es meramente ilustrativo y mantiene una posición neutral. La información obtenida en libros impresos y sitios web es referenciada y se alenta al lector a visitar los sitios originales de donde la información científica fue obtenida para respaldar las aseveraciones realizadas alrededor de las nociones expuestas en este trabajo.
 
 ## Análisis teórico<a name="analisis"></a>
 
@@ -59,8 +59,7 @@ Según afirma Stremler (1982) es imposible construir un sistema de ancho de band
 Para poder explicar la relación entre el ancho de banda y la capacidad de transmisión de información de un canal, es necesario especificar los siguientes conceptos:
 - **Ancho de banda de la señal:** El rango de frecuencias de la señal que se está transmitiendo. Está controlado por el transmisor.
 - **Ancho de banda de canal:** Rango de anchos de banda permitidos en el canal de comunicación
-- **Capacidad de canal:** Máxima tasa de velocidad a la que los datos pueden ser transmitidos en un canal.
-<!-- - **Capacidad de canal:** «Velocidad límite de transmisión de información a través de un canal» (Stremler, 1982) -->
+- **Capacidad de canal:** "Velocidad límite de transmisión de información a través de un canal." (Stremler, 1982) 
 
 &ensp;&ensp;&ensp;&ensp;Al hablar de ondas analógicas, las técnicas más usadas de codificación, como *Binary Amplitude Shift Key* o *Binary Frequency Shift Key*, se basan en la alteración de una propiedad de una onda que es transmitida. Al ser aumentada la frecuencia de la onda, el tiempo de cada periodo es menor, por lo que se puede alcanzar así una mayor tasa de transmisión de datos.
 
@@ -68,14 +67,19 @@ Para poder explicar la relación entre el ancho de banda y la capacidad de trans
 
 &ensp;&ensp;&ensp;&ensp;No obstante, debido a las limitaciones tecnológicas, es difícil aumentar de forma indefinida el ancho de banda, por lo que se trata de delimitar los rangos que los dispositivos ocupan para transmitir datos. Cada rango de frecuencias es llamado *canal*, y sirven para que varias señales puedan ser emitidas simultáneamente sin ser interrumpidas o atenuadas por ruido.
 
-Las siguientes ecuaciones propuestas por Nyquist y Shannon son las que describen la capacidad de canal en diferentes escenarios:
+Las siguientes ecuaciones propuestas por Harry Nyquist y Claude E. Shannon son las que describen la capacidad de canal en diferentes escenarios:
 
 - Escenario de transmisión de datos en canales sin ruido:
-  <!-- - C = 2 * B * Lg M, donde C es la capacidad de canal, B es el máximo ancho de banda del canal, y M es el número de canales. -->
+  
   - <img src="https://latex.codecogs.com/svg.latex?C=2B\lg&space;M" title="C=2B\lg M" />, donde C es la capacidad de canal, B es el máximo ancho de banda del canal, y M es el número de canales.
+  
 - Escenario de transmisión de datos en canales con ruido:
-  <!-- - C = B lg (1 + SNR), donde B es el ancho de banda del canal y SNR es la relación *señal/ruido*. -->
-  - <img src="https://latex.codecogs.com/svg.latex?C=B\lg&space;(1&space;&plus;&space;SNR)" title="C=B\lg (1 + SNR)" />, donde B es el ancho de banda del canal y SNR es la relación *señal/ruido*.
+  
+  - <img src="https://latex.codecogs.com/svg.latex?C=B\lg&space;(1&space;&plus;&space;SNR)" title="C=B\lg (1 + SNR)"/>, donde B es el ancho de banda del canal y SNR es la relación *señal/ruido*.
+  
+    
+  
+    *"En presencia de ruido, la capacidad del canal discreto disminuye debido a errores de la transmisión."* (Stremler, 1982)
 
 ### Unidades de medición de la cantidad de información transmitida (digital).<a name="transmitida"></a>
 Para responder adecuadamente esta consulta es necesario recurrir a varios conceptos. El primero de ellos es llamado *Capacidad de la información* que es «el número de símbolos independientes que pueden pasarse, a través del sistema, en una unidad de tiempo determinada» (Tomasi, 1994). Debido a que el símbolo fundamental es el dígito binario o también conocido como bit, la capacidad de la información suele ser expresada en _bits por segundo ─bps─_.
@@ -94,7 +98,18 @@ Para responder adecuadamente esta consulta es necesario recurrir a varios concep
 &ensp;&ensp;&ensp;&ensp;A partir del hecho de que la capacidad de información representa la máxima cantidad de símbolos que pueden ser transmitidos en determinado tiempo ─y se mide en _bits por segundo_ ─, la cantidad de información transmitida, en consecuencia, debería de ser cuantificada en bits ─o cualquiera de sus múltiplos─ y obtenida en función de la capacidad de información del sistema en cuestión y el tiempo que haya durado la transmisión.
 
 ### Caso de estudio: “El sistema de comunicación Ethernet con par trenzado”, investigar ancho de banda y capacidad de transmisión de datos digitales a través de la línea Ethernet.<a name="ethernet"></a>
-<!-- * waiting for Erick -->
+Para el Instituto de Ingenieros Eléctricos y Electrónicos (IEEE por sus siglas en inglés), Ethernet, o la familia de protocolos 802.3, son estándares usados en la implementación de redes de área local (LAN).
+
+&ensp;&ensp;&ensp;&ensp;Para Ethernet, existen 2 unidades de transmisión: un paquete y un frame. Un paquete es un bloque de datos enviado a otro dispositivo dentro de la misma red. Es por esto, que los paquetes forman parte de la capa de red del modelo OSI. Los frames son usados en la capa de enlace de datos, ya que encapsulan paquetes, pero también agregan datos de la dirección física del remitente y receptor.
+
+&ensp;&ensp;&ensp;&ensp;Un sistema de comunicación basado en Ethernet con par trenzado hace referencia a todo aquel sistema que ha usado pares de cables de cobre aislados trenzados para la implementación de la capa física de su red. La finalidad de trenzar pares de cables es para lograr obtener menor ruido a la hora de la transmisión de los datos. 
+
+Actualmente existen 2 tipos de tecnología Ethernet de pares trenzados:
+
+- Fast Ethernet (100BASE-TX), con un ancho de banda de hasta 100 Mbps
+- Gigabit Ethernet (100BASE-T), con un ancho de banda de hasta 1 Gbps
+
+Existen otros tipos de implementación de Ethernet que permiten llegar a anchos de banda más altos. Algunos emplean el uso de cables coaxiales o de fibra óptica, pero el más común es el par trenzado debido a su simplicidad y costo.
 
 
 ### Efecto del ruido en el ancho de banda<a name="ruido"></a>
@@ -109,10 +124,23 @@ Wayne Tomasi (1994) define al ruido eléctrico como _«cualquier energía eléct
   - Ruido de disparo
   - Ruido de tiempo de tránsito
 
-&ensp;&ensp;&ensp;&ensp;Si bien es cierto que la distorsión que el ruido puede provocar en una señal analógica depende ampliamente de su potencia en relación con la potencia de la misma señal, esta distorsión **también depende de la distribución espectral del ruido en relación con el ancho de banda** utilizado por el sistema que transmite esta señal. En general, la señal recibida estará compuesta de la señal originalmente enviada junto con todas las distorsiones adquiridas mientras ésta transitaba por su medio hasta su destino, de las cuales la mayoría son ocasionadas por ruido que si, como se ha mencionado antes, su distribución espectral coincide con el rango de frecuencias que el ancho de banda admite, entonces las señales que transiten por esa vía se verán más afectadas por estas deformaciones.
+&ensp;&ensp;&ensp;&ensp;Proakis estableció en 2014 que «la limitación básica que el ruido causa en un canal de comunicación no recae sobre la seguridad de la comunicación, sino en la velocidad de la comunicación». Si bien es cierto que la distorsión que el ruido puede provocar en una señal analógica depende ampliamente de su potencia en relación con la potencia de la misma señal, esta distorsión **también depende de la distribución espectral del ruido en relación con el ancho de banda** utilizado por el sistema que transmite esta señal. En general, la señal recibida estará compuesta de la señal originalmente enviada junto con todas las distorsiones adquiridas mientras ésta transitaba por su medio hasta su destino, de las cuales la mayoría son ocasionadas por ruido que si, como se ha mencionado antes, su distribución espectral coincide con el rango de frecuencias que el ancho de banda admite, entonces las señales que transiten por esa vía se verán más afectadas por estas deformaciones.
 
 ### Concepto de relación de Señal a Ruido de un canal o línea de transmisión.<a name="concepto"></a>
-<!-- * waiting for Erick -->
+El concepto de relación señal a ruido (SNR por sus siglas en inglés), es usado en sistemas analógicos y digitales, el cual nos indica la potencia de una señal en relación al ruido que hay en el entorno en que es transmitida.
+
+La fórmula para calcular la *SNR* en decibeles es la siguiente:
+
+<img src="https://latex.codecogs.com/svg.latex?SNRdB=10\log&space;(Vs/Vn)" title="SNR"/>
+
+​									donde *Vs* es potencia de la señal y *Vn* el nivel de ruido en microvolts.
+
+​											Nota: El logaritmo será multiplicado por 20 si la medida de 
+​																	potencia de las señales está dada en watts.
+
+&ensp;&ensp;&ensp;&ensp;Es gracias a esta fórmula, que podemos saber si una señal podrá ser recibida con la suficiente calidad como para que pueda transmitir datos. Por ejemplo, si se conoce que el ruido en un canal es de 5 mV, y la señal que transmitiremos será de 15 mV, podemos aplicar la educación para obtener que SNR = 9.54dB. 
+
+&ensp;&ensp;&ensp;&ensp;Mientras el valor de la SNR sea mayor, la calidad de la señal aumentará con ella, y en caso de que el ruido sea mayor que la señal, el valor de la SNR será negativo. 
 
 
 ## Conclusiones
@@ -132,6 +160,6 @@ El concepto de ancho de banda representa una de las nociones más importantes ta
 - Veber. (2019). *What is Bandwidth and How is it Measured?*. [online] Available at: [https://www.veber.co.uk](https://www.veber.co.uk/what-is-bandwidth-and-how-is-it-measured/) [Accessed 28 Aug. 2019].
 - Paessler. (2019). *What is Bandwidth? - Definition and Details.* [online] Available at: [https://www.paessler.com](https://www.veber.co.uk/what-is-bandwidth-and-how-is-it-measured/) [Accessed 28 Aug. 2019].
 - Toppr-guides. (2019). *Bandwidth of Signals: Definition, Concepts, Applications, Videos, Examples.* [online] Available at: [https://www.toppr.com](https://www.toppr.com) [Accessed 28 Aug. 2019].
-
-
-<!-- To include later: "The basic limi tation that noise causes in a communication channel is not the reliability of communication, but on the speed of communication" Shannon (1948) by John Proakis -->
+- Tech Differences. (2019). *Difference Between Frame and Packet (With Comparison Chart) - TechDifferences*. [online] Available at: https://techdifferences.com/difference-between-frame-and-packet.html [Accessed 29 Aug. 2019].
+- Techopedia.com. (2019). *Twisted Pair Ethernet*. [online] Available at: https://www.techopedia.com/definition/25741/twisted-pair-ethernet [Accessed 29 Aug. 2019].
+- SearchNetworking. (2019). *Ethernet*. [online] Available at: https://searchnetworking.techtarget.com/definition/Ethernet [Accessed 29 Aug. 2019].
