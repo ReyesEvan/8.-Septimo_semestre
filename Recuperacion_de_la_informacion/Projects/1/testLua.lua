@@ -1,4 +1,0 @@
-function fibonacci
-
-
-print("Hey")
