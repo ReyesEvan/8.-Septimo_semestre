@@ -54,6 +54,8 @@ Within the Cranfield paradigm, two elements especially important: collection siz
 
 ![diagram](http://localhost:8080/svg/0/ZLBHQW8n47ptAxO-ANXWNqMA87reAQMeFn1pMqrDiaTs8xHVtytPgbnFQ5uI9ZEJsI4B5fCa1py0NNTDChjWG92-G5B65kM3Yur99i3MsCCkKOxraZmbfPZ8UeLHEin0aUm-KS2BZzw8iwunKU3rQRtv0mutgyVbDSB3GKioLjpH29vaBLHEK5KFVQ8Pr6Hpq5IyHla7NQXnzipjeS2ywbScbEJmQFpwamN3wFhXoSLtV0anhsvPcNZ06hnZ0Ne7sMFHm_rqEYtpC3IOJeumuhmDZjbHl7BMwSe-0vjGoteZyZmwkRweAOyxJQpGQ_9e4GmpCbCgCPeYwyJjPwOp-f7hNJjrJvXIJjOugqvJP_NphtW2jyRgxUl7MCcQXBFNrmSBZBL-vcy0 "diagram")
 
+
+
 &ensp;&ensp;&ensp;&ensp;The TREC provide topics, among other reasons, to make a clear statement of what criteria make a document relevant. A topic statement consists of: <u>an identifier, a title, a description and a narrative.</u> The topic statements are created by the person who performs the relevance assessments. The NIST TREC then selects a set of topics from the candidate topics. **The relevance judgments are what turns a set of documents into a test collection.**
 
 ### Effects of Incompleteness
