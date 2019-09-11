@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chicken-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="JungleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="kOA-gr-JZU">
+                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chicken" translatesAutoresizingMaskIntoConstraints="NO" id="C9f-X6-UzF">
+                                <rect key="frame" x="83" y="249.5" width="248" height="358"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pXO-1L-i6k" appends="YES" id="YDy-MJ-hbR"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRAG ME AROUND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6v-0N-hJv">
+                                <rect key="frame" x="0.0" y="94" width="414" height="89.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C9f-X6-UzF" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="5Tl-9G-seG"/>
+                            <constraint firstItem="kOA-gr-JZU" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="8Wv-Nf-Z6N"/>
+                            <constraint firstItem="h6v-0N-hJv" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="0.1" id="GWa-rb-UPR"/>
+                            <constraint firstItem="kOA-gr-JZU" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="I2N-WS-vBl"/>
+                            <constraint firstItem="h6v-0N-hJv" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="50" id="UWz-Sp-aNx"/>
+                            <constraint firstItem="kOA-gr-JZU" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="Wdp-Tg-wQT"/>
+                            <constraint firstItem="h6v-0N-hJv" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="bqC-Cx-Tie"/>
+                            <constraint firstItem="kOA-gr-JZU" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="e10-fu-tJi"/>
+                            <constraint firstItem="C9f-X6-UzF" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="0.4" id="l7g-PM-tAI"/>
+                            <constraint firstItem="C9f-X6-UzF" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="tT6-SM-kbD"/>
+                            <constraint firstItem="h6v-0N-hJv" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="z8Z-b3-mSx"/>
+                            <constraint firstItem="C9f-X6-UzF" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" multiplier="0.6" id="zuK-IO-Bao"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chicken" image="first" selectedImage="chicken-ico" id="acW-dT-cKf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="pXO-1L-i6k">
+                    <connections>
+                        <action selector="handlePan:" destination="9pv-A4-QxB" id="vvr-mx-zhT"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Duck-->
+        <scene sceneID="JDv-um-ONh">
+            <objects>
+                <viewController id="3xP-dc-TpQ" customClass="ThirdViewController" customModule="JungleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hK6-jQ-P6w" customClass="ThirdViewCon">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="sIO-LW-yNS">
+                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANGE MY SIZE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDW-ij-Lfh">
+                                <rect key="frame" x="0.0" y="94" width="414" height="89.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duck" translatesAutoresizingMaskIntoConstraints="NO" id="Fon-fw-Z34">
+                                <rect key="frame" x="83" y="249.5" width="248" height="358"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="n1t-de-oiZ" appends="YES" id="Q4x-Vs-O6G"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fon-fw-Z34" firstAttribute="centerY" secondItem="6v4-WS-KoJ" secondAttribute="centerY" id="Ihd-HW-DVz"/>
+                            <constraint firstItem="sIO-LW-yNS" firstAttribute="height" secondItem="hK6-jQ-P6w" secondAttribute="height" id="QV2-wt-yKn"/>
+                            <constraint firstItem="hDW-ij-Lfh" firstAttribute="centerX" secondItem="6v4-WS-KoJ" secondAttribute="centerX" id="Ur9-J4-jzS"/>
+                            <constraint firstItem="Fon-fw-Z34" firstAttribute="width" secondItem="hK6-jQ-P6w" secondAttribute="width" multiplier="0.6" id="XV3-zm-3CF"/>
+                            <constraint firstItem="hDW-ij-Lfh" firstAttribute="top" secondItem="6v4-WS-KoJ" secondAttribute="top" constant="50" id="cch-SC-6vf"/>
+                            <constraint firstItem="hDW-ij-Lfh" firstAttribute="height" secondItem="hK6-jQ-P6w" secondAttribute="height" multiplier="0.1" id="cy4-Nz-ttv"/>
+                            <constraint firstItem="sIO-LW-yNS" firstAttribute="width" secondItem="hK6-jQ-P6w" secondAttribute="width" id="gdr-yD-IyQ"/>
+                            <constraint firstItem="hDW-ij-Lfh" firstAttribute="width" secondItem="hK6-jQ-P6w" secondAttribute="width" id="lv1-iC-K20"/>
+                            <constraint firstItem="sIO-LW-yNS" firstAttribute="centerX" secondItem="6v4-WS-KoJ" secondAttribute="centerX" id="oMR-6H-de3"/>
+                            <constraint firstItem="Fon-fw-Z34" firstAttribute="centerX" secondItem="6v4-WS-KoJ" secondAttribute="centerX" id="uCe-Rn-D2I"/>
+                            <constraint firstItem="sIO-LW-yNS" firstAttribute="centerY" secondItem="6v4-WS-KoJ" secondAttribute="centerY" id="y3m-8h-z4u"/>
+                            <constraint firstItem="Fon-fw-Z34" firstAttribute="height" secondItem="hK6-jQ-P6w" secondAttribute="height" multiplier="0.4" id="zKd-Hf-WCl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6v4-WS-KoJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Duck" image="duck-ico" id="39u-JM-nnX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ye-6F-K2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="n1t-de-oiZ">
+                    <connections>
+                        <action selector="handlePinch:" destination="3xP-dc-TpQ" id="Lm6-fJ-wDo"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1718" y="-321"/>
+        </scene>
+        <!--Tiger-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="JungleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="DRJ-Gy-I2h">
+                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVE YOUR PHONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e9-ck-7E8">
+                                <rect key="frame" x="0.0" y="94" width="414" height="89.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger" translatesAutoresizingMaskIntoConstraints="NO" id="9mM-bT-j9R">
+                                <rect key="frame" x="83" y="249.5" width="248" height="358"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OT4-9v-coo" appends="YES" id="1DH-Ne-sPu"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9mM-bT-j9R" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" multiplier="0.6" id="8q7-ne-0t7"/>
+                            <constraint firstItem="9e9-ck-7E8" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="AAd-56-RFN"/>
+                            <constraint firstItem="9mM-bT-j9R" firstAttribute="centerY" secondItem="O1u-W8-tvY" secondAttribute="centerY" id="BmZ-rh-bzy"/>
+                            <constraint firstItem="9e9-ck-7E8" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="50" id="Fcy-OH-h62"/>
+                            <constraint firstItem="DRJ-Gy-I2h" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="GQo-No-QeF"/>
+                            <constraint firstItem="9mM-bT-j9R" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="Gab-DD-DKn"/>
+                            <constraint firstItem="DRJ-Gy-I2h" firstAttribute="centerY" secondItem="O1u-W8-tvY" secondAttribute="centerY" id="Xsv-B6-6e5"/>
+                            <constraint firstItem="9e9-ck-7E8" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="hCy-jF-EXh"/>
+                            <constraint firstItem="9mM-bT-j9R" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.4" id="hPl-Cd-DxI"/>
+                            <constraint firstItem="9e9-ck-7E8" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="0.1" id="lDR-q1-xKX"/>
+                            <constraint firstItem="DRJ-Gy-I2h" firstAttribute="height" secondItem="QS5-Rx-YEW" secondAttribute="height" id="nG4-6W-mJT"/>
+                            <constraint firstItem="DRJ-Gy-I2h" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="pUz-Ap-0cM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tiger" image="tiger-ico" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tigerImage" destination="9mM-bT-j9R" id="mgv-ul-KTu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OT4-9v-coo">
+                    <connections>
+                        <action selector="handleTap:" destination="8rJ-Kc-sve" id="mZx-bq-7oQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--T-rex-->
+        <scene sceneID="VXi-l4-r1V">
+            <objects>
+                <viewController id="NHc-4U-ciC" customClass="FourthViewController" customModule="JungleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LVv-e2-HPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="ILm-R0-GxY">
+                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SLIDE ME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5J-oc-Kzf">
+                                <rect key="frame" x="0.0" y="94" width="414" height="89.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trex" translatesAutoresizingMaskIntoConstraints="NO" id="c9d-2v-nXN">
+                                <rect key="frame" x="83" y="249.5" width="248" height="358"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ulq-AW-jry" appends="YES" id="Ock-no-wzz"/>
+                                    <outletCollection property="gestureRecognizers" destination="UKl-D7-sGb" appends="YES" id="2PZ-re-tgG"/>
+                                    <outletCollection property="gestureRecognizers" destination="BYO-jm-Fkb" appends="YES" id="wa9-Yl-fXr"/>
+                                    <outletCollection property="gestureRecognizers" destination="NJk-AM-oTT" appends="YES" id="Cxf-xB-eD0"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ILm-R0-GxY" firstAttribute="centerY" secondItem="2sc-3E-Z6L" secondAttribute="centerY" id="1Wn-bY-eI8"/>
+                            <constraint firstItem="ILm-R0-GxY" firstAttribute="width" secondItem="LVv-e2-HPQ" secondAttribute="width" id="4N6-Lz-e9i"/>
+                            <constraint firstItem="ILm-R0-GxY" firstAttribute="centerX" secondItem="2sc-3E-Z6L" secondAttribute="centerX" id="8cV-pQ-XPS"/>
+                            <constraint firstItem="c9d-2v-nXN" firstAttribute="centerX" secondItem="2sc-3E-Z6L" secondAttribute="centerX" id="DnT-KA-5Yj"/>
+                            <constraint firstItem="c9d-2v-nXN" firstAttribute="width" secondItem="LVv-e2-HPQ" secondAttribute="width" multiplier="0.6" id="NxQ-IC-qa9"/>
+                            <constraint firstItem="f5J-oc-Kzf" firstAttribute="centerX" secondItem="2sc-3E-Z6L" secondAttribute="centerX" id="RyD-YD-A6U"/>
+                            <constraint firstItem="c9d-2v-nXN" firstAttribute="centerY" secondItem="2sc-3E-Z6L" secondAttribute="centerY" id="WaN-NI-T3s"/>
+                            <constraint firstItem="f5J-oc-Kzf" firstAttribute="top" secondItem="2sc-3E-Z6L" secondAttribute="top" constant="50" id="Ywg-bl-erf"/>
+                            <constraint firstItem="ILm-R0-GxY" firstAttribute="height" secondItem="LVv-e2-HPQ" secondAttribute="height" id="glp-nb-5zp"/>
+                            <constraint firstItem="f5J-oc-Kzf" firstAttribute="height" secondItem="LVv-e2-HPQ" secondAttribute="height" multiplier="0.1" id="jRq-1g-oXt"/>
+                            <constraint firstItem="c9d-2v-nXN" firstAttribute="height" secondItem="LVv-e2-HPQ" secondAttribute="height" multiplier="0.4" id="nCv-cu-qca"/>
+                            <constraint firstItem="f5J-oc-Kzf" firstAttribute="width" secondItem="LVv-e2-HPQ" secondAttribute="width" id="ukE-nz-3Xf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2sc-3E-Z6L"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="T-rex" image="trex-ico" id="5Ej-7d-Gdi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc1-dp-TLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="ulq-AW-jry">
+                    <connections>
+                        <action selector="handleSwipe:" destination="NHc-4U-ciC" id="qIH-Wo-Mzy"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="UKl-D7-sGb">
+                    <connections>
+                        <action selector="handleSwipe:" destination="NHc-4U-ciC" id="SyT-XG-d1L"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="BYO-jm-Fkb">
+                    <connections>
+                        <action selector="handleSwipe:" destination="NHc-4U-ciC" id="Wut-jZ-jRq"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="NJk-AM-oTT">
+                    <connections>
+                        <action selector="handleSwipe:" destination="NHc-4U-ciC" id="aXf-zK-nxI"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1698" y="369"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" alpha="0.5" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="3xP-dc-TpQ" kind="relationship" relationship="viewControllers" id="Ykb-3z-Ppi"/>
+                        <segue destination="NHc-4U-ciC" kind="relationship" relationship="viewControllers" id="xZg-ZS-wZT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chicken" width="960" height="638"/>
+        <image name="chicken-ico" width="30" height="30"/>
+        <image name="duck" width="600" height="600"/>
+        <image name="duck-ico" width="30" height="33"/>
+        <image name="first" width="30" height="30"/>
+        <image name="sky" width="2100" height="1220"/>
+        <image name="tiger" width="3000" height="2100"/>
+        <image name="tiger-ico" width="30" height="30"/>
+        <image name="trex" width="520" height="560"/>
+        <image name="trex-ico" width="30" height="30"/>
+    </resources>
+</document>

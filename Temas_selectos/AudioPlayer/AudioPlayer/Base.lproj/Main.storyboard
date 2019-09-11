@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudioPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="101" translatesAutoresizingMaskIntoConstraints="NO" id="u1d-wL-nMO">
+                                <rect key="frame" x="0.0" y="89.5" width="414" height="673"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C1Z-Ip-ILu">
+                                        <rect key="frame" x="39.5" y="0.0" width="335" height="68"/>
+                                    </slider>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dondeEstaLaLuz" translatesAutoresizingMaskIntoConstraints="NO" id="Zra-RG-Hme">
+                                        <rect key="frame" x="0.0" y="168" width="414" height="337"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yXA-vU-Ubc">
+                                        <rect key="frame" x="41.5" y="606" width="331" height="67"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fd-1U-grH">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="67"/>
+                                                <state key="normal" title="Button" image="previous"/>
+                                                <connections>
+                                                    <action selector="previousSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QtK-dd-FkN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5H-4Q-hNu">
+                                                <rect key="frame" x="113" y="0.0" width="105" height="67"/>
+                                                <state key="normal" title="Button" image="play"/>
+                                                <connections>
+                                                    <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3q5-Si-Xva"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMK-fZ-xge">
+                                                <rect key="frame" x="226" y="0.0" width="105" height="67"/>
+                                                <state key="normal" title="Button" image="next"/>
+                                                <connections>
+                                                    <action selector="nextSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HoH-Ik-iKO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Zra-RG-Hme" firstAttribute="centerX" secondItem="u1d-wL-nMO" secondAttribute="centerX" id="9RV-zj-n5N"/>
+                                    <constraint firstItem="C1Z-Ip-ILu" firstAttribute="height" secondItem="u1d-wL-nMO" secondAttribute="height" multiplier="0.1" id="L1u-DJ-ndO"/>
+                                    <constraint firstItem="yXA-vU-Ubc" firstAttribute="height" secondItem="u1d-wL-nMO" secondAttribute="height" multiplier="0.1" id="Qih-da-7a3"/>
+                                    <constraint firstItem="C1Z-Ip-ILu" firstAttribute="centerX" secondItem="u1d-wL-nMO" secondAttribute="centerX" id="UM3-yt-J8r"/>
+                                    <constraint firstItem="yXA-vU-Ubc" firstAttribute="centerX" secondItem="u1d-wL-nMO" secondAttribute="centerX" id="cgK-yC-MxY"/>
+                                    <constraint firstItem="Zra-RG-Hme" firstAttribute="centerY" secondItem="u1d-wL-nMO" secondAttribute="centerY" id="gwv-4W-PJd"/>
+                                    <constraint firstItem="yXA-vU-Ubc" firstAttribute="width" secondItem="u1d-wL-nMO" secondAttribute="width" multiplier="0.8" id="hcl-Ak-xRo"/>
+                                    <constraint firstItem="C1Z-Ip-ILu" firstAttribute="width" secondItem="u1d-wL-nMO" secondAttribute="width" multiplier="0.8" id="hug-ip-VGd"/>
+                                    <constraint firstItem="Zra-RG-Hme" firstAttribute="height" secondItem="u1d-wL-nMO" secondAttribute="height" multiplier="0.5" id="l9F-bH-B7g"/>
+                                    <constraint firstItem="Zra-RG-Hme" firstAttribute="width" secondItem="u1d-wL-nMO" secondAttribute="width" id="z2A-Ct-N0f"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u1d-wL-nMO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="8rA-yn-LFe"/>
+                            <constraint firstItem="u1d-wL-nMO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="j5M-XD-CCW"/>
+                            <constraint firstItem="u1d-wL-nMO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jDc-QH-1z3"/>
+                            <constraint firstItem="u1d-wL-nMO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zqn-7N-wgs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Zra-RG-Hme" id="VNk-0y-LD8"/>
+                        <outlet property="playButton" destination="h5H-4Q-hNu" id="QWu-pm-wWX"/>
+                        <outlet property="slider" destination="C1Z-Ip-ILu" id="WK5-jS-klG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dondeEstaLaLuz" width="500" height="500"/>
+        <image name="next" width="80" height="80"/>
+        <image name="play" width="80" height="80"/>
+        <image name="previous" width="80" height="80"/>
+    </resources>
+</document>
