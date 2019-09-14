@@ -53,3 +53,11 @@ Rest is all about resources
 - **[300, 400)** -> Redirections
 - **[400, 500)** -> Client errors
 - **[500, 600)** -> Server errors
+
+## Distributed architecture models
+
+### Layers
+
+- Presentation - offers operations to a client for interact with the system
+- Application logic - determines what the system actually does
+- Resource management - deals with the business logic data
