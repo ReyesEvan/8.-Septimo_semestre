@@ -10,8 +10,8 @@ Conector BNC con candado
 6. Click on Output to generate the desired signal
 7. Toggle Autoset to get the best view of the signal
 8. Play with the vertical and horizontal position to navigate around X and Y-axis
-9. 
-10. Use the 
+9.
+10. Use the
 
 Span del análisis - cantidad de cuadros por dimensión en Hz de cada uno / ventana de frecuencias a visualizar en el analizador de espectros
 
