@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1940612B232C4B3600B03D6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940612A232C4B3600B03D6A /* AppDelegate.swift */; };
+		1940612D232C4B3600B03D6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940612C232C4B3600B03D6A /* ViewController.swift */; };
+		19406130232C4B3600B03D6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1940612E232C4B3600B03D6A /* Main.storyboard */; };
+		19406132232C4B3800B03D6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19406131232C4B3800B03D6A /* Assets.xcassets */; };
+		19406135232C4B3800B03D6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19406133232C4B3800B03D6A /* LaunchScreen.storyboard */; };
+		19406140232C4B3800B03D6A /* LuxemburgoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940613F232C4B3800B03D6A /* LuxemburgoTests.swift */; };
+		1940614B232C4B3800B03D6A /* LuxemburgoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940614A232C4B3800B03D6A /* LuxemburgoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1940613C232C4B3800B03D6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1940611F232C4B3600B03D6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19406126232C4B3600B03D6A;
+			remoteInfo = Luxemburgo;
+		};
+		19406147232C4B3800B03D6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1940611F232C4B3600B03D6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19406126232C4B3600B03D6A;
+			remoteInfo = Luxemburgo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		19406127232C4B3600B03D6A /* Luxemburgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luxemburgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1940612A232C4B3600B03D6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1940612C232C4B3600B03D6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1940612F232C4B3600B03D6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19406131232C4B3800B03D6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19406134232C4B3800B03D6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		19406136232C4B3800B03D6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1940613B232C4B3800B03D6A /* LuxemburgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuxemburgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1940613F232C4B3800B03D6A /* LuxemburgoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuxemburgoTests.swift; sourceTree = "<group>"; };
+		19406141232C4B3800B03D6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19406146232C4B3800B03D6A /* LuxemburgoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuxemburgoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1940614A232C4B3800B03D6A /* LuxemburgoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuxemburgoUITests.swift; sourceTree = "<group>"; };
+		1940614C232C4B3800B03D6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19406124232C4B3600B03D6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19406138232C4B3800B03D6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19406143232C4B3800B03D6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1940611E232C4B3600B03D6A = {
+			isa = PBXGroup;
+			children = (
+				19406129232C4B3600B03D6A /* Luxemburgo */,
+				1940613E232C4B3800B03D6A /* LuxemburgoTests */,
+				19406149232C4B3800B03D6A /* LuxemburgoUITests */,
+				19406128232C4B3600B03D6A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19406128232C4B3600B03D6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19406127232C4B3600B03D6A /* Luxemburgo.app */,
+				1940613B232C4B3800B03D6A /* LuxemburgoTests.xctest */,
+				19406146232C4B3800B03D6A /* LuxemburgoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19406129232C4B3600B03D6A /* Luxemburgo */ = {
+			isa = PBXGroup;
+			children = (
+				1940612A232C4B3600B03D6A /* AppDelegate.swift */,
+				1940612C232C4B3600B03D6A /* ViewController.swift */,
+				1940612E232C4B3600B03D6A /* Main.storyboard */,
+				19406131232C4B3800B03D6A /* Assets.xcassets */,
+				19406133232C4B3800B03D6A /* LaunchScreen.storyboard */,
+				19406136232C4B3800B03D6A /* Info.plist */,
+			);
+			path = Luxemburgo;
+			sourceTree = "<group>";
+		};
+		1940613E232C4B3800B03D6A /* LuxemburgoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1940613F232C4B3800B03D6A /* LuxemburgoTests.swift */,
+				19406141232C4B3800B03D6A /* Info.plist */,
+			);
+			path = LuxemburgoTests;
+			sourceTree = "<group>";
+		};
+		19406149232C4B3800B03D6A /* LuxemburgoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1940614A232C4B3800B03D6A /* LuxemburgoUITests.swift */,
+				1940614C232C4B3800B03D6A /* Info.plist */,
+			);
+			path = LuxemburgoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19406126232C4B3600B03D6A /* Luxemburgo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1940614F232C4B3800B03D6A /* Build configuration list for PBXNativeTarget "Luxemburgo" */;
+			buildPhases = (
+				19406123232C4B3600B03D6A /* Sources */,
+				19406124232C4B3600B03D6A /* Frameworks */,
+				19406125232C4B3600B03D6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Luxemburgo;
+			productName = Luxemburgo;
+			productReference = 19406127232C4B3600B03D6A /* Luxemburgo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1940613A232C4B3800B03D6A /* LuxemburgoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19406152232C4B3800B03D6A /* Build configuration list for PBXNativeTarget "LuxemburgoTests" */;
+			buildPhases = (
+				19406137232C4B3800B03D6A /* Sources */,
+				19406138232C4B3800B03D6A /* Frameworks */,
+				19406139232C4B3800B03D6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1940613D232C4B3800B03D6A /* PBXTargetDependency */,
+			);
+			name = LuxemburgoTests;
+			productName = LuxemburgoTests;
+			productReference = 1940613B232C4B3800B03D6A /* LuxemburgoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		19406145232C4B3800B03D6A /* LuxemburgoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19406155232C4B3800B03D6A /* Build configuration list for PBXNativeTarget "LuxemburgoUITests" */;
+			buildPhases = (
+				19406142232C4B3800B03D6A /* Sources */,
+				19406143232C4B3800B03D6A /* Frameworks */,
+				19406144232C4B3800B03D6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				19406148232C4B3800B03D6A /* PBXTargetDependency */,
+			);
+			name = LuxemburgoUITests;
+			productName = LuxemburgoUITests;
+			productReference = 19406146232C4B3800B03D6A /* LuxemburgoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1940611F232C4B3600B03D6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = UDLAP19;
+				TargetAttributes = {
+					19406126232C4B3600B03D6A = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					1940613A232C4B3800B03D6A = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 19406126232C4B3600B03D6A;
+					};
+					19406145232C4B3800B03D6A = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 19406126232C4B3600B03D6A;
+					};
+				};
+			};
+			buildConfigurationList = 19406122232C4B3600B03D6A /* Build configuration list for PBXProject "Luxemburgo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1940611E232C4B3600B03D6A;
+			productRefGroup = 19406128232C4B3600B03D6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19406126232C4B3600B03D6A /* Luxemburgo */,
+				1940613A232C4B3800B03D6A /* LuxemburgoTests */,
+				19406145232C4B3800B03D6A /* LuxemburgoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19406125232C4B3600B03D6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19406135232C4B3800B03D6A /* LaunchScreen.storyboard in Resources */,
+				19406132232C4B3800B03D6A /* Assets.xcassets in Resources */,
+				19406130232C4B3600B03D6A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19406139232C4B3800B03D6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19406144232C4B3800B03D6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19406123232C4B3600B03D6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1940612D232C4B3600B03D6A /* ViewController.swift in Sources */,
+				1940612B232C4B3600B03D6A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19406137232C4B3800B03D6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19406140232C4B3800B03D6A /* LuxemburgoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		19406142232C4B3800B03D6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1940614B232C4B3800B03D6A /* LuxemburgoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1940613D232C4B3800B03D6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19406126232C4B3600B03D6A /* Luxemburgo */;
+			targetProxy = 1940613C232C4B3800B03D6A /* PBXContainerItemProxy */;
+		};
+		19406148232C4B3800B03D6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19406126232C4B3600B03D6A /* Luxemburgo */;
+			targetProxy = 19406147232C4B3800B03D6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1940612E232C4B3600B03D6A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1940612F232C4B3600B03D6A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		19406133232C4B3800B03D6A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19406134232C4B3800B03D6A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1940614D232C4B3800B03D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1940614E232C4B3800B03D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19406150232C4B3800B03D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Luxemburgo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.udlap.157068.Luxemburgo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		19406151232C4B3800B03D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Luxemburgo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.udlap.157068.Luxemburgo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		19406153232C4B3800B03D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LuxemburgoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.udlap.157068.LuxemburgoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Luxemburgo.app/Luxemburgo";
+			};
+			name = Debug;
+		};
+		19406154232C4B3800B03D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LuxemburgoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.udlap.157068.LuxemburgoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Luxemburgo.app/Luxemburgo";
+			};
+			name = Release;
+		};
+		19406156232C4B3800B03D6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LuxemburgoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.udlap.157068.LuxemburgoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Luxemburgo;
+			};
+			name = Debug;
+		};
+		19406157232C4B3800B03D6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LuxemburgoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mx.udlap.157068.LuxemburgoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Luxemburgo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19406122232C4B3600B03D6A /* Build configuration list for PBXProject "Luxemburgo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1940614D232C4B3800B03D6A /* Debug */,
+				1940614E232C4B3800B03D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1940614F232C4B3800B03D6A /* Build configuration list for PBXNativeTarget "Luxemburgo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19406150232C4B3800B03D6A /* Debug */,
+				19406151232C4B3800B03D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19406152232C4B3800B03D6A /* Build configuration list for PBXNativeTarget "LuxemburgoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19406153232C4B3800B03D6A /* Debug */,
+				19406154232C4B3800B03D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19406155232C4B3800B03D6A /* Build configuration list for PBXNativeTarget "LuxemburgoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19406156232C4B3800B03D6A /* Debug */,
+				19406157232C4B3800B03D6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1940611F232C4B3600B03D6A /* Project object */;
+}
