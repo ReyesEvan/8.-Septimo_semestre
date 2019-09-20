@@ -16,12 +16,12 @@ To get other probabilities than the mean one, Z-tables are used, but to get to u
 We are searching for the probability of finishing activity A in 5 days or less, but our normal distribution has a μ = 7 and a σ = 1.33
 
 
-| Activity | Min | Max | Reg | Predecessor | M    |
-| -------- | --- | --- | --- | ----------- | ---- |
-| A        | 3   | 11  | 7   | -           | 7    |
-| B        | 2   | 10  | 6   | A           | 6    |
-| C        | 4   | 9   | 5   | A           | 5.50 |
-| D        | 7   | 14  | 9   | B, C        | 9.5  |
+| Activity |  Min  |  Max  |  Reg  | Predecessor |    M |
+| :------: | :---: | :---: | :---: | :---------: | ---: |
+|    A     |   3   |  11   |   7   |      -      |    7 |
+|    B     |   2   |  10   |   6   |      A      |    6 |
+|    C     |   4   |   9   |   5   |      A      | 5.50 |
+|    D     |   7   |  14   |   9   |    B, C     |  9.5 |
 
 To get the mean of the whole project, the mean of the critical activities is obtained
 To get the standard deviation of the whole project, the standard deviations of the critical activities are summed
