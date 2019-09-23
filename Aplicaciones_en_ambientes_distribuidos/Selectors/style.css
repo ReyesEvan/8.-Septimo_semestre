@@ -1,0 +1,15 @@
+/* Type selector: */
+
+li:last-child {
+	color: darkred;
+	font-family: sans-serif
+}
+
+ol li {
+	font-size: 24px
+}
+
+ul li:hover {
+	font-size: 24px;
+	color: rgb(77, 185, 56)
+}
