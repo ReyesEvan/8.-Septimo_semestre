@@ -4,46 +4,52 @@ DSL stands for _Domain Specific Language_
 
 ## Dependencies
 Make sure you are using the following dependencies and/or repositories in Maven (or equivalent in Gradle):
-    
-    <repositories>
-        <repository>
-            <id>jcenter</id>
-            <name>jcenter</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-        <repository>
-            <id>central</id>
-            <name>central</name>
-            <url>https://repo1.maven.org/maven2/</url>
-        </repository>
-    </repositories>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.jetbrains.exposed</groupId>
-            <artifactId>exposed</artifactId>
-            <version>0.17.3</version>
-        </dependency>
+```maven
+<repositories>
+    <repository>
+        <id>jcenter</id>
+        <name>jcenter</name>
+        <url>http://jcenter.bintray.com</url>
+    </repository>
+    <repository>
+        <id>central</id>
+        <name>central</name>
+        <url>https://repo1.maven.org/maven2/</url>
+    </repository>
+</repositories>
 
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.6</version>
-        </dependency>
-    </dependencies>
+<dependencies>
+    <dependency>
+        <groupId>org.jetbrains.exposed</groupId>
+        <artifactId>exposed</artifactId>
+        <version>0.17.3</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.2.6</version>
+    </dependency>
+</dependencies>
+```
 
 ## Connection
 To stablish a connection to an existing database ─in PostgreSQL─ use the following sintaxis:
 
-    Database.connect("jdbc:postgresql://di.rec.tion.IP:port/databaseName", "org.postgresql.Driver", "user", "password")
+```kotlin
+Database.connect("jdbc:postgresql://di.rec.tion.IP:port/databaseName", "org.postgresql.Driver", "user", "password")
+```
 
 
 ## Tables
 A DB table is represented by an `object` inherited from `org.jetbrains.exposed.sql.Table` like this:
 
-    object TableName: Table() {
-        val column1: Column<Type> = type(name)
-    }
+```kotlin
+object TableName: Table() {
+    val column1: Column<Type> = type(name)
+}
+```
 
 Where:
 - `TableName` has to be an existing relation in the database
@@ -72,4 +78,20 @@ Where:
 | `binary`            | `VARBINARY` *with length*            |
 | `uuid`              | `BINARY(16)`                         |
 | `reference`         | a foreign key                        |
-[obtained from here](https://github.com/JetBrains/Exposed/wiki/DataTypes)  
+[obtained from here](https://github.com/JetBrains/Exposed/wiki/DataTypes)
+
+## DAO
+Although for DSL the latest declaration is enough to begin working with SQL, when working with DAO is required to declare a class for each table.
+These classes, called `DAO`s will represent a register of the table with each of their properties representing a record field. These are declared as follows:
+
+```kotlin
+class Record(id: EntityID<Int>): IntEntity(id) {
+    companion object: IntEntityClass<Record>(Table)
+
+    val column by Table.column
+    val column2 by Table.column2
+    val column3 by Table.column3
+
+    override fun toString = "..." //optional
+}
+```
