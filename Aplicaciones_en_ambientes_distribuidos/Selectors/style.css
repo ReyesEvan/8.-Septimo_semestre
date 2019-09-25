@@ -11,5 +11,9 @@ ol li {
 
 ul li:hover {
 	font-size: 24px;
-	color: rgb(77, 185, 56)
+	color: rgb(49, 54, 44)
+}
+
+a {
+	text-decoration: none;
 }
