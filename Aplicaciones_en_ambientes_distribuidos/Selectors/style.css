@@ -1,7 +1,7 @@
 /* Type selector: */
 
 li:last-child {
-	color: darkred;
+	color: rgb(112, 20, 187);
 	font-family: sans-serif
 }
 
@@ -11,9 +11,13 @@ ol li {
 
 ul li:hover {
 	font-size: 24px;
-	color: rgb(49, 54, 44)
+	color: rgb(49, 54, 44);
 }
 
 a {
 	text-decoration: none;
+}
+
+ul, ol {
+	display: inline-block;
 }
