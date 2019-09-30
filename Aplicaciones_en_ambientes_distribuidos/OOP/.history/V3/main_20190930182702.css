@@ -1,0 +1,17 @@
+body {
+    padding: 0;
+}
+
+ul {
+    padding: 0 0 0 50px;
+}
+
+.nav {
+    padding-left: 0;
+    margin: 5px 0 20px;
+    text-align: center;
+}
+
+.nav li {
+    display: inline;
+}

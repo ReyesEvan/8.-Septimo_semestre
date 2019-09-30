@@ -1,0 +1,37 @@
+body {
+    padding: 0;
+}
+
+h1 {
+    color: #22a85e;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+    margin: 10px 0 20px 0;
+    text-align: center
+}
+
+.header {
+    padding: 10px;
+    background-color: #b56663;
+}
+
+.header a {
+    color #ffffff;
+}
+
+ul {
+    padding: 0 0 0 50px;
+}
+
+.nav {
+    padding-left: 0;
+    margin: 5px 0 20px;
+    text-align: center;
+}
+
+.nav li {
+    display: inline;
+}
