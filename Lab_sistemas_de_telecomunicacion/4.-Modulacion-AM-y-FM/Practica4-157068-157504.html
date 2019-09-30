@@ -1,0 +1,225 @@
+<h1 id="modulación-en-amplitud-y-modulación-en-frecuencia">Modulación en Amplitud y Modulación en Frecuencia <!-- omit in toc --></h1>
+<h2 id="tabla-de-contenidos">Tabla de contenidos <!-- omit in toc --></h2>
+<ul>
+<li><a href="#resumen">Resumen</a></li>
+<li><a href="#an%c3%a1lisis-te%c3%b3rico">Análisis teórico</a>
+<ul>
+<li><a href="#marco-te%c3%b3rico">Marco teórico</a>
+<ul>
+<li><a href="#modulaci%c3%b3n-de-una-se%c3%b1al">Modulación de una señal</a></li>
+<li><a href="#modulaci%c3%b3n-am">Modulación AM</a></li>
+<li><a href="#modulaci%c3%b3n-fm">Modulación FM</a></li>
+</ul></li>
+<li><a href="#an%c3%a1lisis-matem%c3%a1tico-del-experimento">Análisis matemático del experimento</a>
+<ul>
+<li><a href="#construcci%c3%b3n-de-ondas-am">Construcción de ondas AM</a></li>
+<li><a href="#contrucci%c3%b3n-de-ondas-fm">Contrucción de ondas FM</a></li>
+</ul></li>
+<li><a href="#resultados-experimentales">Resultados experimentales</a>
+<ul>
+<li><a href="#1-generar-una-se%c3%b1al-modulada-en-amplitud-con-una-portadora-de-1-khz-y-modulante-de-100-hz-ambas-de-tipo-sinusoidal-ajuste-las-amplitudes-para-obtener-un-%c3%adndice-de-modulaci%c3%b3n-del-50">1. Generar una señal modulada en amplitud con una portadora de 1 Khz y modulante de 100 hz ambas de tipo sinusoidal. Ajuste las amplitudes para obtener un índice de modulación del 50%</a></li>
+<li><a href="#2-visualice-la-se%c3%b1al-en-el-osciloscopio-en-el-dominio-del-tiempo-se-debe-observar-una-se%c3%b1al-parecida-a-alguna-de-las-mostradas-a-continuaci%c3%b3n">2. Visualice la señal en el osciloscopio en el dominio del tiempo. Se debe observar una señal parecida a alguna de las mostradas a continuación</a></li>
+<li><a href="#3-visualice-el-espectro-de-frecuencia-de-la-se%c3%b1al-modulada-am">3. Visualice el espectro de frecuencia de la señal modulada AM</a></li>
+<li><a href="#4-generar-una-se%c3%b1al-modulada-en-frecuencia-con-una-portadora-de-1khz-y-modulante-de-100-hz-ambas-de-tipo-sinusoidal-visualice-la-se%c3%b1al-en-el-osciloscopio-en-el-dominio-del-tiempo">4. Generar una señal modulada en frecuencia con una portadora de 1Khz y modulante de 100 hz ambas de tipo sinusoidal. Visualice la señal en el osciloscopio en el dominio del tiempo</a></li>
+<li><a href="#5-visualice-el-espectro-de-frecuencia-de-la-se%c3%b1al-modulada-fm">5. Visualice el espectro de frecuencia de la señal modulada FM</a></li>
+<li><a href="#6-simule-en-matlab-una-se%c3%b1al-de-am-con-las-caracter%c3%adsticas-del-punto-1">6. Simule en matlab una señal de AM con las características del punto 1</a></li>
+<li><a href="#7-simule-el-espectro-de-frecuencias-de-dicha-se%c3%b1al">7. Simule el espectro de frecuencias de dicha señal</a></li>
+<li><a href="#8-simule-en-matlab-una-se%c3%b1al-de-fm-con-las-caracter%c3%adsticas-del-punto-4">8. Simule en matlab una señal de FM con las características del punto 4</a></li>
+<li><a href="#9-simule-el-espectro-de-frecuencias-de-dicha-se%c3%b1al">9. Simule el espectro de frecuencias de dicha señal</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#conclusi%c3%b3n">Conclusión</a></li>
+<li><a href="#bibliograf%c3%ada">Bibliografía</a></li>
+</ul>
+<h2 id="resumen">Resumen</h2>
+<p>El presente resumen pretende explicar la práctica realizada en el Laboratorio de Sistemas de Telecomunicaciones referente a modulaciones de amplitud y frecuencia de una señal analógica. Esta técnica, muy popularmente utilizada en estaciones de radio, es realizada con la intención de prolongar la distancia en que una transmisión puede viajar, ahorrar costos entre otras ventajas.</p>
+<p>    Durante la realización de esta práctica, fueron simuladas, transmitidas y visualizadas algunas muestras de señales moduladas con estas dos técnicas. Las simulaciones fueron realizadas mediante un generador de señales y un osciloscopio para su visualización; además, se hizo uso del software Matlab para reforzar estos aprendizajes con más simulaciones digitales.</p>
+<h2 id="análisis-teórico">Análisis teórico</h2>
+<h3 id="marco-teórico">Marco teórico</h3>
+<h4 id="modulación-de-una-señal">Modulación de una señal</h4>
+<p>La modulación de una señal tiene como objetivo el uso de las propiedades de las ondas para la transmisión de datos. Normalmente, las propiedades que se modifican para esto son la frecuencia, amplitud y fase. Debido a los alcances de la presente práctica, se explicarán solamente las modulaciones con frecuencia y amplitud.</p>
+<h4 id="modulación-am">Modulación AM</h4>
+<p>Para lograr una modulación sobre la amplitud de una frecuencia, se deben asignar diferentes valores de frecuencia a cada unidad de datos que se envía. Para hacer esta modulación, el voltaje o intensidad de la señal tendrá que variar en el tiempo, sin embargo, la frecuencia será constante.</p>
+<blockquote>
+<p>“Cuando se aplica la señal de información de modulación (una onda sinusoidal), la amplitud de la portadora aumenta y disminuye de acuerdo a ella. La frecuencia portadora permanece constante durante la modulación de amplitud.” (Chaparro, 2015)</p>
+</blockquote>
+<figure>
+<img src=http://127.0.0.1:5500/resources/WhatsApp%20Image%202019-09-27%20at%2021.24.01.jpeg width=500px></img>
+<figcaption>
+Figura 1. Representación gráfica de una señal modulada en amplitud.
+</figcaption>
+</figure>
+<p>    Como se muestra en la <em>Figura 1</em>, una señal portadora con una frecuencia y amplitud será usada para transmitir un mensaje que será codificado sobre la amplitud de la señal portadora. Cabe recalcar que se puede designar un nivel máximo de modulación de la onda; una modulación muy fuerte provocará nodos en la onda, y por lo tanto, distorsión de la señal. Si la modulación es muy débil, los datos enviados serán recibidos con menor claridad.</p>
+<p>    Para generar una onda modulada en amplitud, se necesitan sumar dos armónicos a la señal para poder lograr que ésta varíe su amplitud en el tiempo. Éstos estarán separados por un rango de frecuencias adecuado para generar la modulación.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/WhatsApp%20Image%202019-09-27%20at%2022.00.56.jpeg width=500px></img>
+<figcaption>
+Figura 2. Representación en el dominio de las frecuencias de una señal modulada en amplitud.
+</figcaption>
+</figure>
+<p>    Como se muestra en la <em>Figura 2</em>, una señal modulada en amplitud será el resultado de la suma de 2 armónicos a la señal portadora.</p>
+<p>    Actualmente la modulación de amplitud, o <em>AM</em>, es popular para la transmisión de radio como estaciones o equipos personales.</p>
+<h4 id="modulación-fm">Modulación FM</h4>
+<p>A diferencia de la modulación <em>AM</em>, la <em>FM</em> (por sus siglas en inglés Frequency Modulation) modifica la frecuencia de una onda a lo largo del tiempo para codificar en esta los datos que se desean enviar.</p>
+<blockquote>
+<p>“La modulación de frecuencia (FM) adopta un enfoque similar en el sentido de que la señal portadora es modulada por una señal de entrada, excepto que, en este caso, la amplitud de la señal modulada es constante, pero su frecuencia cambia.” -Rouphael, 2009</p>
+</blockquote>
+<p>    Debido a esto, en teoría el ancho de banda de una onda modulada en FM depende de la cantidad y la codificación de los datos que se enviarán. No obstante, en la práctica esto no es posible debido a las limitaciones físicas de la infraestructura actual, la cual limita el ancho de banda usable.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/WhatsApp%20Image%202019-09-27%20at%2022.25.58.jpeg width=500px></img>
+<figcaption>
+Figura 3. Representación en el dominio de las frecuencias de una señal modulada en FM.
+</figcaption>
+</figure>
+<p>    Como se muestra en la <em>Figura 3</em>, y a diferencia de las señales AM, la señal contiene varias frecuencias, ya que en estas están siendo codificados los datos.</p>
+<p>    Las ventajas que este tipo de modulación ofrece es que es menos perceptible al ruido debido a que normalmente, se usa una amplitud constante para la transmisión de datos, y de esta forma el ruido puede ser detectado esas variaciones de forma más sencilla.</p>
+<h3 id="análisis-matemático-del-experimento">Análisis matemático del experimento</h3>
+<h4 id="construcción-de-ondas-am">Construcción de ondas AM</h4>
+<p>Gracias a los conceptos anteriormente analizados, se puede saber que para la generación de señales AM, se necesitarán 3 señales, descritas por las siguientes expresiones:</p>
+<p><span class="math inline"><em>S</em><sub><em>A</em><em>M</em></sub>(<em>t</em>) = <em>S</em><sub><em>c</em></sub>(<em>t</em>) + <em>S</em><sub>1</sub>(<em>t</em>) + <em>S</em><sub>2</sub>(<em>t</em>)</span></p>
+<p><span class="math inline"><em>S</em><sub><em>c</em></sub>(<em>t</em>) = <em>A</em><sub><em>c</em></sub> * <em>s</em><em>i</em><em>n</em>(2<em>π</em><em>f</em><sub><em>c</em></sub><em>t</em>)</span></p>
+<p><span class="math inline"><em>S</em><sub>1</sub>(<em>t</em>) = <em>A</em><sub>1</sub> * <em>s</em><em>i</em><em>n</em>(2<em>π</em><em>f</em><sub>1</sub><em>t</em>)</span></p>
+<p><span class="math inline"><em>S</em><sub>2</sub>(<em>t</em>) = <em>A</em><sub>2</sub> * <em>s</em><em>i</em><em>n</em>(2<em>π</em><em>f</em><sub>2</sub><em>t</em>)</span></p>
+<p><span class="math inline"><em>f</em><sub>1</sub> = <em>f</em><sub><em>c</em></sub> − <em>f</em><sub><em>m</em></sub></span></p>
+<p><span class="math inline"><em>f</em><sub>2</sub> = <em>f</em><sub><em>c</em></sub> + <em>f</em><sub><em>m</em></sub></span></p>
+<p>donde Ac, A1 y A2 son la amplitud de la señal portadora, del armónico menor y el armónico mayor respectivamente; fc es la frecuencia de la señal portadora; f1 y f2 la frecuencia de los armónicos; y fm es el ancho del rango de frecuencias que separan a la frecuencia de los armónicos de la frecuencia de la señal portadora.</p>
+<h4 id="construcción-de-ondas-fm">Construcción de ondas FM</h4>
+<p>Para la construcción de ondas FM, la siguiente expresión es usada:</p>
+<p><span class="math inline"><em>x</em>(<em>t</em>) = <em>A</em><sub><em>c</em></sub><em>c</em><em>o</em><em>s</em>[<em>W</em><sub><em>c</em></sub><em>t</em> + <em>ϕ</em><sub><em>c</em></sub> + <em>A</em><sub><em>m</em></sub><em>s</em><em>i</em><em>n</em>(<em>W</em><sub><em>m</em></sub><em>t</em> + <em>ϕ</em><sub><em>m</em></sub>)]</span>,</p>
+<p>donde <span class="math inline">(<em>A</em><sub><em>c</em></sub>, <em>ϕ</em><sub><em>c</em></sub>)</span> describen la amplitud y fase de la onda portadora, <span class="math inline"><em>W</em><sub><em>c</em></sub> = 2<em>π</em><em>f</em><sub><em>c</em></sub></span>, <span class="math inline"><em>f</em><sub><em>c</em></sub></span> es la frecuencia de la señal portadora; y <span class="math inline">(<em>A</em><sub><em>m</em></sub>, <em>ϕ</em><sub><em>m</em></sub>)</span> son la amplitud y fase de la onda moduladora, <span class="math inline"><em>W</em><sub><em>m</em></sub> = 2<em>ϕ</em><em>f</em><sub><em>m</em></sub></span>, y <span class="math inline"><em>f</em><sub><em>m</em></sub></span> es la frecuencia de la onda moduladora.</p>
+<h3 id="resultados-experimentales">Resultados experimentales</h3>
+<p>Durante el transcurso de la presente práctica fueron realizadas una serie de experimentos prácticos que permitirían afianzar estos conceptos de una manera más gráfica y certera. A continuación, son enlistados los detalles y retroalimentaciones gráficas obtenidas durante el desarrollo de la misma.</p>
+<h4 id="generar-una-señal-modulada-en-amplitud-con-una-portadora-de-1-khz-y-modulante-de-100-hz-ambas-de-tipo-sinusoidal.-ajuste-las-amplitudes-para-obtener-un-índice-de-modulación-del-50">1. Generar una señal modulada en amplitud con una portadora de 1 Khz y modulante de 100 hz ambas de tipo sinusoidal. Ajuste las amplitudes para obtener un índice de modulación del 50%</h4>
+<p>Para generar estas señales fue utilizado nuevamente el generador de ondas <em>Wave Station 2012</em>, desde el cual fueron personalizados los siguientes parámetros que definirían a la señal generada:</p>
+<ul>
+<li><strong>Frecuencia portadora:</strong> En el menú principal del generador de ondas es seleccionada la frecuencia con la que se desea portar la señal a modular. Para este caso particular fue elegida una frecuencia de 1 Kilohertz.</li>
+<li><strong>Frecuencia modulante:</strong> Una vez que se ha elegido una señal como portadora, se accedió al menú de modulación, desde donde fue posible personalizar la frecuencia que se pretendiera transmitir una vez se montara en la señal portadora. Durante este ejemplo, fue elegida una frecuencia a transmitir de 100 hertz.</li>
+</ul>
+<p>    Para este caso particular, la amplitud de las señales no fue un parámetro particularmente especial, por lo cual fue mantenida en un valor por defecto.</p>
+<p>    En la <em>Figura 4</em> se muestran los parámetros previamente descritos para generar la señal solicitada en este punto. Es posible observar que el valor debajo de <strong>AM Freq</strong> muestra un <code>100.0%</code> que refleja el índice de modulación de la señal; este es colocado por defecto en un 100 % ya que es un índice conocido por funcionar de manera neutral en la mayoría de los casos. Este mismo valor fue consiguientemente disminuido hasta un 50 % por indicaciones del instructor; este cambio es ilustrado en la <em>Figura 5</em></p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/IMG_20190919_182740.jpg width=500px></img>
+<figcaption>
+Figura 4. Generando señal de 100 Hz y portadora de 1 KHz modulada en amplitud. Índice de modulación: 100 %
+</figcaption>
+</figure>
+<figure>
+<img src=http://127.0.0.1:5500/resources/IMG_20190919_182019.jpg width=500px></img>
+<figcaption>
+Figura 5. Generando señal de 100 Hz y portadora de 1 KHz modulada en amplitud. Índice de modulación: 50 %
+</figcaption>
+</figure>
+<h4 id="visualice-la-señal-en-el-osciloscopio-en-el-dominio-del-tiempo.-se-debe-observar-una-señal-parecida-a-alguna-de-las-mostradas-a-continuación">2. Visualice la señal en el osciloscopio en el dominio del tiempo. Se debe observar una señal parecida a alguna de las mostradas a continuación</h4>
+<p>Una vez las señales hubieron sido generadas, fueron inmediatamente visualizadas en el <em>Osciloscopio TDS 1012B</em>. Ambas imágenes mostradas a continuación corresponden a la señal descrita previamente -portadora de 1 Khz y modulante de 100 hertz-. La <em>Figura 6</em> muestra la representación de la señal generada en la <em>Figura 4</em>, es decir, cuyo índice de modulación se mantiene en 100 %. Por otro lado, la <em>Figura 7</em> representa la señal generada en la <em>Figura 5</em> cuyo índice de modulación haya sido reducido en 50 %.</p>
+<p>    La diferencia entre ambas señales radica únicamente en el índice de modulación de cada una. Visualmente, es apreciable que la <em>Figura 6</em> presenta ondas fluidas, donde la modulación en su amplitud sigue un patrón no abrupto, mientras que la <em>Figura 7</em> por su parte presenta una particularidad cuando su amplitud llega al punto mínimo, pues ésta alcanza el punto del cero absoluto casi en su totalidad.</p>
+<p>    Este último efecto es conocido como <em>submodulación</em> que, de acuerdo a las palabras del instructor, <em>“es un efecto es aceptable pero provoca que el receptor reciba la señal a un volumen bajo”</em>.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/IMG_20190919_182546.jpg width=500px></img>
+<figcaption>
+Figura 6. Señal de 100 Hz y portadora de 1 KHz modulada en amplitud. Índice de modulación: 100 %
+</figcaption>
+</figure>
+<figure>
+<img src=http://127.0.0.1:5500/resources/IMG_20190919_182745.jpg width=500px></img>
+<figcaption>
+Figura 7. Señal de 100 Hz y portadora de 1 KHz modulada en amplitud. Índice de modulación: 50 %
+</figcaption>
+</figure>
+<h4 id="visualice-el-espectro-de-frecuencia-de-la-señal-modulada-am">3. Visualice el espectro de frecuencia de la señal modulada AM</h4>
+<p>A continuación, el siguiente paso involucró uno de los conceptos previamente analizados en clase: espectro de frecuencia. Éste es en palabras simples definido como “es una medida de la distribución de amplitudes de cada frecuencia que compone una señal”. Esto quiere decir que la <em>Figura 8</em> representa el conjunto de frecuencias que componen a la señal generada anteriormente con su respectiva amplitud.</p>
+<p>    A pesar de que se distinguen una serie de pequeñas señales ininteligibles a lo largo del espectro, consecuencia del ruido existente junto con la señal, son principalmente visibles tres frecuencias casi al final del espectro visible. Estas tres señales representan a las señales portadora y modulante definidas previamente. La frecuencia central y con amplitud más amplia es la señal portadora de 1 Kilohertz, las dos señales que la coronan corresponden a la señal modulante.</p>
+<p>La razón por la cual aparecen dos señales en vez de una es porque:</p>
+<blockquote>
+<p>Un espectro Fourier es simétrico con respecto al eje y; incluso aunque a menudo se despliegue únicamente las frecuencias positivas, la porción negativa del eje x contiene sus correspondientes frecuencias negativas. Estas frecuencias negativas son fácilmente ignoradas cuando se lidia con el espectro original, pero es esencial incluirlas cuando se está cambiando el espectro. -Allaboutcircuits.com, 2019</p>
+</blockquote>
+<figure>
+<img src=http://127.0.0.1:5500/resources/IMG_20190919_183955.jpg width=500px></img>
+<figcaption>
+Figura 8. Señal de 100 Hz y portadora de 1 KHz modulada en amplitud. Índice de modulación: 50 %
+</figcaption>
+</figure>
+<h4 id="generar-una-señal-modulada-en-frecuencia-con-una-portadora-de-1khz-y-modulante-de-100-hz-ambas-de-tipo-sinusoidal.-visualice-la-señal-en-el-osciloscopio-en-el-dominio-del-tiempo">4. Generar una señal modulada en frecuencia con una portadora de 1Khz y modulante de 100 hz ambas de tipo sinusoidal. Visualice la señal en el osciloscopio en el dominio del tiempo</h4>
+<p>A continuación, fue generada una señal equivalente a la primera señal descrita en el presente reporte con la excepción de que esta vez fue modulada en su frecuencia. Los parámetros ilustrados en la <em>Figura 9</em> son idénticos a los explicados previamente, solo el tipo de modulación cambia.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/IMG_20190919_184801.jpg width=500px></img>
+<figcaption>
+Figura 9. Generando señal de 100 Hz y portadora de 1 KHz modulada en frecuencia. Índice de modulación: 50 %
+</figcaption>
+</figure>
+<h4 id="visualice-el-espectro-de-frecuencia-de-la-señal-modulada-fm">5. Visualice el espectro de frecuencia de la señal modulada FM</h4>
+<p>La <em>Figura 10</em> refleja el resultado visual de la señal generada en el punto anterior. En esta ocasión, la amplitud de la señal se mantiene constante, ya que la modulación en frecuencia no afecta la amplitud de la señal resultante sino su frecuencia. Es esta la razón de que los periodos aumenten y se reduzcan paulatinamente.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/IMG_20190919_184805_1.jpg width=500px></img>
+<figcaption>
+Figura 10. Señal de 100 Hz y portadora de 1 KHz modulada en frecuencia. Índice de modulación: 100 %
+</figcaption>
+</figure>
+<h4 id="simule-en-matlab-una-señal-de-am-con-las-características-del-punto-1">6. Simule en matlab una señal de AM con las características del punto 1</h4>
+<p>Para generar una señal AM en matlab, la función <code>ammod</code> es usada. Esta función recibe 3 parámetros: la señal modulante, la frecuencia de la señal portadora, y la frecuencia de muestreo. El código se muestra a continuación:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1"></a>fs = <span class="fl">10000</span>; <span class="co">%Frecuencia de muestreo</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>t = (<span class="fl">0</span>:<span class="fl">1</span>/fs:<span class="fl">1</span>); <span class="co">%Linear space para generar señales y gráficas a presentar</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>fc = <span class="fl">100</span>; <span class="co">%Frecuencia de carrier (portadora),</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>fx = <span class="fl">100</span>; frecuencia de modulante</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>x = <span class="fl">1</span> * sin(<span class="fl">2</span> * pi * fx * t); <span class="co">%Señal modulante</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a>yam = ammod(x, fc, fs); <span class="co">%Modulación en Amplitud</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>plot(t, yam);</span></code></pre></div>
+<p>Como se puede observar, primero se creo la señal modulante con los datos especificados en el punto 1, para después usar esta, la frecuencia de la portadora, y la frecuencia de muestreo para generar la señal modulada. Finalmente, con la función <code>plot()</code> se muestra el gráfico de la señal generada. Finalmente, la gráfica obtenida como resultado del código anterior es mostrada en la <em>Figura 11</em>.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/punto6.png width=500px></img>
+<figcaption>
+Figura 11.
+</figcaption>
+</figure>
+<h4 id="simule-el-espectro-de-frecuencias-de-dicha-señal">7. Simule el espectro de frecuencias de dicha señal</h4>
+<p>Con ayuda de la función <code>fft()</code>, se obtuvo el espectro de frecuencias de la señal AM generada.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1"></a>esp = abs(fft(yam))</span>
+<span id="cb2-2"><a href="#cb2-2"></a>plot(esp)</span></code></pre></div>
+<p>Al agregar las líneas de código anteriores, se generará una gráfica con el espectro de frecuencias de la señal AM que es mostrada en la <em>Figura 12</em>. Como se puede observar, existen 2 picos en el espectro debido a que son las frecuencias de la señal portadora y la moduladora.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/punto7.png width=500px></img>
+<figcaption>
+Figura 12. Espectro de frecuencias de una señal modulada en amplitud
+</figcaption>
+</figure>
+<h4 id="simule-en-matlab-una-señal-de-fm-con-las-características-del-punto-4">8. Simule en matlab una señal de FM con las características del punto 4</h4>
+<p>Para generar una señal FM, se usó la función <code>fmmod()</code>. Esta toma como parámetros la señal modulante, la frecuencia de la señal portadora y la frecuencia de muestreo.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb3-1"><a href="#cb3-1"></a>fs = <span class="fl">10000</span>; <span class="co">%Frecuencia de muestreo</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>t = (<span class="fl">0</span>:<span class="fl">1</span>/fs:<span class="fl">1</span>); <span class="co">%Linear space para generar señales y gráficas a presentar</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>fc = <span class="fl">1000</span>; <span class="co">%Frecuencia de carrier (portadora),</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>fx=<span class="fl">100</span>; frecuencia de modulante</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a>x = <span class="fl">1</span>*sin(<span class="fl">2</span>*pi*fx*t); <span class="co">%Señal modulante</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a>fm = fmmod(x,fc,fs); <span class="co">%Modulación en Amplitud</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>plot(t, fm);</span></code></pre></div>
+<p>Al ser ejecutado este código, se mostrará una gráfica que muestre el comportamiento de la gráfica; en la <em>Figura 13</em> es posible visualizarlo.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/punto8.png width=500px></img>
+<figcaption>
+Figura 13. Representación gráfica de una señal modulada en frecuencia
+</figcaption>
+</figure>
+<h4 id="simule-el-espectro-de-frecuencias-de-dicha-señal-1">9. Simule el espectro de frecuencias de dicha señal</h4>
+<p>Finalmente, para mostrar el espectro de frecuencias de la señal FM, se usó de nuevo la función <em>fft()</em>, como se muestra a continuación.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode matlab"><code class="sourceCode matlab"><span id="cb4-1"><a href="#cb4-1"></a>ft = abs(fft(fm))</span>
+<span id="cb4-2"><a href="#cb4-2"></a>plot(ft)</span></code></pre></div>
+<p>Esto genera una gráfica que muestra el comportamiento esperado en una señal FM, ya que se presentan varios picos en diferentes frecuencias, lo cual se ilustra en la <em>Figura 14</em>.</p>
+<figure>
+<img src=http://127.0.0.1:5500/resources/punto9.png width=500px></img>
+<figcaption>
+Figura 14. Espectro de frecuencias de un a señal modulada en frecuencia
+</figcaption>
+</figure>
+<h2 id="conclusión">Conclusión</h2>
+<p>Gracias a esta práctica, se pudo observar cómo son aprovechadas las propiedades físicas de las ondas para codificar y transmitir datos. Se logró tener una mejor comprensión sobre el concepto de modulación y también se identificaron las diferentes variantes de modulación, como también algunas ventajas de el uso de FM sobre la AM como la mejor resistencia ante el ruido,y prevención de errores.</p>
+<p>Finalmente, se tuvo la oportunidad de conocer más funciones de la plataforma <em>Matlab</em>, las cuales facilitan el estudio y análisis de este tipo de señales, lo cual es de mucha utilidad para comprender los conceptos básicos de los sistemas de telecomunicaciones.</p>
+<h2 id="bibliografía">Bibliografía</h2>
+<ul>
+<li>Chaparro, L. (2015). Signals and systems using MATLAB. 2nd ed.</li>
+<li>CheggStudy. (2019). Am Waves In The Frequency Domain. [online] Available at: https://www.chegg.com/homework-help/definitions/am-waves-in-the-frequency-domain-4</li>
+<li>Rouphael, T. (2009). RF and digital signal processing for software-defined radio. Amsterdam: Newnes.</li>
+<li>Allaboutcircuits.com. (2019). Amplitude Modulation in RF: Theory, Time Domain, Frequency Domain. [online] Available at: https://www.allaboutcircuits.com/textbook/radio-frequency-analysis-design/radio-frequency-modulation/amplitude-modulation-theory-time-domain-frequency-domain/</li>
+<li>Dsprelated.com. (2019). Sinusoidal Frequency Modulation (FM) | Mathematics of the DFT. [online] Available at: https://www.dsprelated.com/freebooks/mdft/Sinusoidal_Frequency_Modulation_FM.html</li>
+</ul>
