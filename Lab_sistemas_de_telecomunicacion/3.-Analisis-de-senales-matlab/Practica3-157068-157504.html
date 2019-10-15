@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Practica3-157068-157504.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/*
+
+Darcula color scheme from the JetBrains family of IDEs
+
+*/
+
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #2b2b2b;
+}
+
+.hljs {
+  color: #bababa;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-link,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal {
+  color: #6896ba;
+}
+
+.hljs-code,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-attribute,
+.hljs-name,
+.hljs-variable {
+  color: #cb7832;
+}
+
+.hljs-params {
+  color: #b9b9b9;
+}
+
+.hljs-string {
+  color: #6a8759;
+}
+
+.hljs-subst,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-symbol,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition {
+  color: #e0c46c;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #7f7f7f;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="an%C3%A1lisis-de-se%C3%B1ales-con-matlab">Análisis de señales con Matlab</h1>
+<h2 id="tabla-de-contenido">Tabla de contenido</h2>
+<ul>
+<li><a href="#resumen">Resumen</a></li>
+<li><a href="#objetivo">Objetivo</a></li>
+<li><a href="#desarrollo">Análisis teórico</a>
+<ul>
+<li><a href="#marco">Marco teórico</a></li>
+<li><a href="#matematico">Análisis matemático del experimento</a></li>
+<li><a href="#resultados-experimentales">Resultados experimentales</a>
+<ul>
+<li><a href="#1">1. Generar una señal sinusoidal</a></li>
+<li><a href="#2">2. Discretizar la señal</a></li>
+<li><a href="#3">3. Sobreponer las gráficas</a></li>
+<li><a href="#4">4. Generar el espectro de frecuencias</a></li>
+<li><a href="#5">5. Agregar ruido a la señal analógica.</a></li>
+<li><a href="#6">6. Obtener el espectro de la señal con ruido</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusión</a></li>
+<li><a href="#biblio">Bibliografía</a></li>
+</ul>
+<h2 id="resumen">Resumen</h2>
+<p>Matlab es una herramienta que facilita la manipulación y operación de matrices y funciones matemáticas. Durante esta práctica se utilizó dicha herramienta para simular y visualizar algunas señales analógicas en diferentes dominios, lo cual permitió analizar de una forma más profunda las propiedades de las ondas y señales.</p>
+<p>    Algunas de las actividades realizadas para lograr este fin fueron el mostrar graficamente una señal, discretizarla, agregar ruido, y usar diferentes funciones para visualizar su espectro de frecuencias.
+Fue gracias a estas actividades que se pudo tener un primer acercamiento a Matlab, y las operaciones básicas que este ofrece para realizar modelos matemáticos y, en este caso, el estudio de las propiedades de las ondas analógicas sinoidales o cosenoidales.</p>
+<h2 id="objetivo">Objetivo</h2>
+<p>Familiarizarse con el uso de Matlab como auxiliar en el manejo se señales usadas en sistemas de Telecomunicación</p>
+<h2 id="an%C3%A1lisis-te%C3%B3rico-a-nameanalisisaa-namedesarrolloa">Análisis teórico <a name="analisis"></a><a name="desarrollo"></a></h2>
+<h3 id="marco-te%C3%B3rico-a-namemarcoa">Marco teórico <a name="marco"></a></h3>
+<p>Matlab es una herramienta que proporciona un ambiente matemático de trabajo y un lenguaje de programación particular que permite y facilita realizar operaciones complejas con matrices -de ahí su nombre- y funciones matemáticas en general. Esta versatilidad permite a Matlab ser considerada una herramienta útil para una amplia cantidad de ámbitos: procesamiento de imagen, procesamiento de audio, técnicas de graficación, y, entre otras, análisis de señales analógicas. Es justamente esta última utilidad la que justifica la utilización de este software para alcanzar el objetivo perseguido.</p>
+<h3 id="an%C3%A1lisis-matem%C3%A1tico-del-experimentoa-namematematicoa">Análisis matemático del experimento<a name="matematico"></a></h3>
+<p>Durante esta práctica se emularon digitalmente ciertas señales analógicas para su consecuente análisis mediante gráficas en diversos dominios. A fin de generar señales con las características deseadas, el primer conocimiento requerido fue la comprensión de la fórmula general de una señal sinusoidal común, definida como sigue:</p>
+<p>        $s(t)=Asin(2πft ± θ)$ ó $s(t)=Acos(ωt ± θ)$</p>
+<p>    Donde la señal $s(t)$ obtenida se encuentra en función de la amplitud ($A$) de la señal, su frecuencia ($f$), desplazamiento de fase ($θ$) y el tiempo ($t$) transcurrido. O bien es también expresada en función de $ω$, que representa la <em>frecuencia angular</em> y es medida en radianes en lugar de Hertz. Las señales a presentar en este reporte se encuentran en esta forma. Si la amplitud o la frecuencia no son especificadas, se asume una amplitud o frecuencia por defecto de 1, mientras que si el desplazamiento de fase no es indicado, se asume un desplazamiento por defecto de 0 grados.</p>
+<h3 id="resultados-experimentales">Resultados experimentales</h3>
+<p>Durante la realización de esta práctica fueron solicitadas una serie de tareas que se enlistan y detallan a continuación:</p>
+<h4 id="1-generar-una-se%C3%B1al-sinusoidal-anal%C3%B3gica-de-10hz-la-frecuencia-de-muestreo-debe-de-ser-100-veces-mayor-que-la-frecuencia-de-la-se%C3%B1ala-name1a">1. Generar una señal sinusoidal analógica de 10Hz. La frecuencia de muestreo debe de ser 100 veces mayor que la frecuencia de la señal.<a name="1"></a></h4>
+<p>Para realizar esta labor se requirió declarar cada uno de los componentes de la señal analógica para después ser utilizados en una ecuación como la descrita anteriormente para obtener una simulación de una señal analógica con dichas características. El código utilizado en Matlab es declarado a continuación y de inmediato se muestra la gráfica resultante en la <em>Figura 1</em> que refleja justamente una señal sinusoidal pura.</p>
+<pre class="hljs"><code><div>t = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1000</span>); 	<span class="hljs-comment">% Time</span>
+a = <span class="hljs-number">1</span>; 						<span class="hljs-comment">% Amplitude</span>
+f = <span class="hljs-number">10</span>; 					<span class="hljs-comment">% Frequency (Hertz)</span>
+w = <span class="hljs-number">2</span> * <span class="hljs-built_in">pi</span> * f;				<span class="hljs-comment">% Angular frequency (radians)</span>
+s = a * <span class="hljs-built_in">sin</span>(w * t); 		<span class="hljs-comment">% Sine wave</span>
+plot(t, s); 				<span class="hljs-comment">% Plot sine signal</span>
+</div></code></pre>
+<figure>
+	<img src="http://127.0.0.1:5500/resources/1.png" width="500px">
+	<figcaption>Figura 1. Señal sinusoidal de 10 Hertz</figcaption>
+</figure>
+<h4 id="2-generar-la-versi%C3%B3n-discreta-de-la-misma-se%C3%B1al-a-name2a">2. Generar la versión discreta de la misma señal <a name="2"></a></h4>
+<p>Para generar la versión discreta de esta señal se hizo uso de la función <code>stem(x, y)</code> que grafica una secuencia de datos discretizada, donde <code>x</code> y <code>y</code> deben de ser matrices o vectores del mismo tamaño o puede <code>x</code> ser una matriz y <code>y</code> un vector, pero el número de filas en la matriz debe ser de la misma longitud del vector.</p>
+<p>    Fueron utilizados los mismos componentes de la función anterior para realizar esta gráfica que es desplegada en la <em>Figura 2</em>. La forma refleja el mismo comportamiento, pero de forma discreta.</p>
+<pre class="hljs"><code><div>stem(t, s);
+</div></code></pre>
+<figure>
+	<img src="http://127.0.0.1:5500/resources/discrete.png" width="500px">
+	<figcaption>Figura 2. Versión discretizada de una señal sinusoidal de 10 Hertz</figcaption>
+</figure>
+<h4 id="3-en-una-sola-figura-grafique-ambas-se%C3%B1ales-a-name3a">3. En una sola figura grafique ambas señales. <a name="3"></a></h4>
+<p>Esta faena requirió mantener las dos gráficas sobrepuestas en un solo lugar, con este objeto se utilizó la instrucción <code>hold on</code> que mantiene la gráfica dibujada anteriormente y dibuja encima de ella la gráfica consecuente. Finalmente, el código finalizó de la siguiente manera con la modificación de las últimas líneas entre las que <code>hold on;</code> figura. La gráfica en la <em>Figura 3</em> resultante expresa simplemente las dos anteriores sobrepuestas una sobre la otra.</p>
+<pre class="hljs"><code><div>t = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">10000</span>); 	<span class="hljs-comment">% Time</span>
+a = <span class="hljs-number">1</span>; 						<span class="hljs-comment">% Amplitude</span>
+f = <span class="hljs-number">10</span>; 					<span class="hljs-comment">% Frequency (Hertz)</span>
+w = <span class="hljs-number">2</span> * <span class="hljs-built_in">pi</span> * f;				<span class="hljs-comment">% Angular frequency (radians)</span>
+s = a * <span class="hljs-built_in">sin</span>(w * t); 		<span class="hljs-comment">% Sine wave</span>
+plot(t, s); 				<span class="hljs-comment">% Plot sine signal</span>
+hold on;
+stem(t, s);
+</div></code></pre>
+<figure>
+	<img src="http://127.0.0.1:5500/resources/holdon.png" width="500px">
+	<figcaption>Figura 3. Gráficas sobrepuestas de las dos versiones anteriores</figcaption>
+</figure>
+<h4 id="4-genere-el-espectro-de-frecuencias-de-la-se%C3%B1al-anal%C3%B3gica-obtenidaa-name4a">4. Genere el espectro de frecuencias de la señal analógica obtenida.<a name="4"></a></h4>
+<p>Para visualizar el espectro de frecuencias de esta señal fueron utilizadas las siguientes dos funciones:</p>
+<ul>
+<li><code>fft(x)</code>: recibe un vector y devuelve el mismo vector con la transformada de Fourier aplicada</li>
+<li><code>abs(x)</code>: recibe un vector y regresa el valor absoluto de cada elemento del vector</li>
+</ul>
+<pre class="hljs"><code><div>t = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">100</span>); 	<span class="hljs-comment">% Time</span>
+a = <span class="hljs-number">1</span>; 						<span class="hljs-comment">% Amplitude</span>
+f = <span class="hljs-number">10</span>; 					<span class="hljs-comment">% Frequency (Hertz)</span>
+w = <span class="hljs-number">2</span> * <span class="hljs-built_in">pi</span> * f;				<span class="hljs-comment">% Angular frequency (radians)</span>
+s = a * <span class="hljs-built_in">sin</span>(w * t); 		<span class="hljs-comment">% Sine wave</span>
+
+esp = <span class="hljs-built_in">abs</span>(fft(s));
+plot(esp)
+</div></code></pre>
+<figure>
+	<img src="http://127.0.0.1:5500/resources/spectrum.png" width="500px">
+	<figcaption>Figura 4. Espectro de frecuencias de la señal analógica</figcaption>
+</figure>
+<p>    En la <em>Figura 4</em> se muestra el espectro de frecuencias obtenido de la señal. Como se puede notar, hay 2 picos en diferentes frecuencias, los cuales representan la frecuencia de los diferentes armónicos que la señal necesita para ser formada.</p>
+<h4 id="5-agregue-ruido-a-la-se%C3%B1al-anal%C3%B3gica-a-name5a">5. Agregue ruido a la señal analógica. <a name="5"></a></h4>
+<p>Con el fin de agregar ruido a una señal se generó una nueva señal analógica con valores aleatorios dentro de un rango arbitrario que serán posteriormente agregados a la señal original. Este ruido fue generado de la siguiente manera:</p>
+<pre class="hljs"><code><div>n = <span class="hljs-number">0.5</span> * <span class="hljs-built_in">rand</span>(<span class="hljs-built_in">length</span>(t));	<span class="hljs-comment">% Noise</span>
+</div></code></pre>
+<p>    Esta instrucción genera una matriz cuadrada de las mismas dimensiones que las muestras de tiempo previamente declaradas en la tarea 1 lleno de valores aleatorios que representarán su <em>amplitud</em> en cada intervalo de tiempo.</p>
+<h4 id="6-obtenga-nuevamente-el-espectro-de-la-se%C3%B1al-ruido-comente-los-resultados-a-name5a">6. Obtenga nuevamente el espectro de la señal + ruido, comente los resultados. <a name="5"></a></h4>
+<p>Para lograr este cometido fue utilizada la señal generada en el punto número 1 de este reporte y el ruido creado en el punto anterior. Estas dos señales fueron sumadas para obtener una señal con cierto ruido generado. Posteriormente, para  Esto fue conseguido con el siguiente código:</p>
+<pre class="hljs"><code><div>t = <span class="hljs-built_in">linspace</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">100</span>); 	<span class="hljs-comment">% Time</span>
+a = <span class="hljs-number">1</span>; 						<span class="hljs-comment">% Amplitude</span>
+f = <span class="hljs-number">10</span>; 					<span class="hljs-comment">% Frequency (Hertz)</span>
+w = <span class="hljs-number">2</span> * <span class="hljs-built_in">pi</span> * f;				<span class="hljs-comment">% Angular frequency (radians)</span>
+s = a * <span class="hljs-built_in">sin</span>(w * t); 		<span class="hljs-comment">% Sine wave</span>
+n = <span class="hljs-number">0.5</span> * <span class="hljs-built_in">rand</span>(<span class="hljs-built_in">length</span>(t));	<span class="hljs-comment">% Noise</span>
+ns = s + n;					<span class="hljs-comment">% Noisy signal</span>
+
+esp = <span class="hljs-built_in">abs</span>(fft(ns));
+plot(esp)
+</div></code></pre>
+<figure>
+	<img src="http://127.0.0.1:5500/resources/noisy.png" width="500px">
+	<figcaption>Figura 5. Espectro de la señal con ruido</figcaption>
+</figure>
+<p>    Como se puede observar en la <em>Figura 5</em>, el espectro de frecuencias de la señal ahora muestra pequeños picos a lo largo de todo el espectro de frecuencias. Estos picos son generados debido a la suma que se realizó de la señal original con el ruido generado, por lo que la señal ahora presenta ruido o interferencia en diferentes frecuencias aleatorias.</p>
+<h2 id="conclusi%C3%B3n-a-nameconclusiona">Conclusión <a name="conclusion"></a></h2>
+<p>La transformación inmediata de una ecuación a su equivalente visual en dos dimensiones permitió que las asociaciones neuronales que han sido desarrolladas paulatinamente en la teoría de estos cursos fuese afianzada con más solidez.</p>
+<p>    La elaboración de la presente práctica permitió tener un mejor entendimiento de las propiedades de las ondas, ya que permite realizar modelos matemáticos manipulables que ofrecen facilidades para el análisis de la estructura o comportamiento de la onda modelada.</p>
+<p>    La práctica también sirvió como introducción al ambiente matemático <em>Matlab</em> en el área de sistemas de telecomunicación, ya que con el uso conjunto de las funciones como <code>plot()</code>, <code>stem()</code> y <code>fft()</code>, y la aplicación de las propiedades matemáticas de las ondas, se pudo observar que puede ser una herramienta sólida para el análisis de ondas analógicas o cualquier modelo matemático.</p>
+<h2 id="bibliograf%C3%ADa-a-namebiblioa">Bibliografía <a name="biblio"></a></h2>
+<ul>
+<li>Attaway, S. (2012). <em>Matlab : A Practical Introduction to Programming and Problem Solving (Vol. 2nd ed).</em> Amsterdam: Butterworth-Heinemann.</li>
+</ul>
+
+</body>
+</html>
