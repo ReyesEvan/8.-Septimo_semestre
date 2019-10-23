@@ -115,11 +115,11 @@
                         ,                                                 ,                  ,                    ,                    ,              ,
 'ZONA DE TABLAS'        ,                                                 ,                  ,                    ,                    ,              ,
 'N°'                    ,'DESCRIPCIÓN'                                    ,'MARCA'           ,'MODELO'            ,'N° SERIE'          ,'PERIODO'     ,'ACTIVO FIJO'
-1, 'TABLA PARA ABDOMINALES', 'BH GOLDEN LINE', 'S/M', 'TAB 110719-1', 'OT 2017', 'AF/000070'
-2, 'TABLA PARA ABDOMINALES', 'BH GOLDEN LINE', 'S/M', 'TAB 110719-2', 'OT 2017', 'AF/000072'
-3, 'TABLA PARA ABDOMINALES', 'BH GOLDEN LINE', 'S/M', 'TAB 110719-3', 'OT 2017', 'AF/000071'
-4, 'TABLA PARA ABDOMINALES', 'BH GOLDEN LINE', 'S/M', 'TAB 110719-4', 'OT 2017', 'AF/000074'
-5, 'TABLA PARA ABDOMINALES', 'BH GOLDEN LINE', 'S/M', 'TAB 110719-5', 'OT 2017', 'AF/000073'
+1                       ,'TABLA PARA ABDOMINALES'                         ,'BH GOLDEN LINE'  ,'S/M'               ,'TAB 110719-1'      ,'OT 2017'     ,'AF/000070'
+2                       ,'TABLA PARA ABDOMINALES'                         ,'BH GOLDEN LINE'  ,'S/M'               ,'TAB 110719-2'      ,'OT 2017'     ,'AF/000072'
+3                       ,'TABLA PARA ABDOMINALES'                         ,'BH GOLDEN LINE'  ,'S/M'               ,'TAB 110719-3'      ,'OT 2017'     ,'AF/000071'
+4                       ,'TABLA PARA ABDOMINALES'                         ,'BH GOLDEN LINE'  ,'S/M'               ,'TAB 110719-4'      ,'OT 2017'     ,'AF/000074'
+5                       ,'TABLA PARA ABDOMINALES'                         ,'BH GOLDEN LINE'  ,'S/M'               ,'TAB 110719-5'      ,'OT 2017'     ,'AF/000073'
                         ,                                                 ,                  ,                    ,                    ,              ,
                         ,                                                 ,                  ,                    ,                    ,              ,
                         ,                                                 ,                  ,                    ,                    ,              ,

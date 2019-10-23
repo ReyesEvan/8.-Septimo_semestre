@@ -1,0 +1,62 @@
+body {
+    padding: 0;
+    background: #ffffff url(/images/albaalum.jpg) top left;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+    margin: 10px 0 20px 0;
+    text-align: center
+}
+
+.header {
+    padding: 10px;
+    background-color: #b56663;
+}
+
+.header a {
+    color: #ffffff;
+}
+
+.header img {
+    margin: 0 auto;
+    display: block;
+}
+
+ul {
+    padding: 0 0 0 50px;
+}
+
+.nav {
+    padding-left: 0;
+    margin: 5px 0 20px;
+    text-align: center;
+}
+
+.nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.main-content {
+    width: 75%;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    margin: 30px auto 0 auto;
+}
+
+.images {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.images li {
+    display: inline;
+    padding-right: 20px;
+}
