@@ -27,7 +27,7 @@ end
 
 
 -- Gloabl Variables
-COMMAND_OPTIONS                 = { " 1. Loade Cache\n", " 2. Generate Posting List\n"}
+COMMAND_OPTIONS                 = { " 1. Load Cache\n", " 2. Generate Posting Lists\n"}
 COMMAND_ACTIONS                 = { loadCache , generatePL }
 DOCUMENTS                       = {}
 POSTING_LIST                    = {}
@@ -45,10 +45,22 @@ local query                     -- User defined query
 UX.welcome()
 
 option = UX.getCommand()
+-- option = 1
 COMMAND_ACTIONS[option]()
 
 while true do
     query = UX.getQuery()
+    -- query = "minutes | (excite & anomalous)"
+    --{292, 704, 266, 244, 869, 603} | ({296, 552} & {296, 1103})
+    --{292, 704, 266, 244, 869, 603} | {296}
+    --{292, 704, 266, 244, 869, 603, 296}
+
+
+    -- query = "excite & (!minutes | anomalous)"
+    -- {296, 552} & (!{292, 704, 266, 244, 869, 603} | {296, 1103})
+    -- {296, 552} & (!{292, 704, 266, 244, 869, 603} ∪ {296, 1103})
+    -- {296, 552}
+
     if UX.escape(query) then break end
     UX.printResults( Query.process(query) )
 end

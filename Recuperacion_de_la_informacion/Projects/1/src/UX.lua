@@ -103,7 +103,7 @@ function UX.getQuery()
     input = io.read("*line")
     valid = Query.validate(input)
     while not valid do
-        io.write("Invalid squery entered. Only symbols accepted: a-z, A-Z, &, |, (), ! and spaces\n")
+        io.write("Invalid query entered. Only symbols accepted: a-z, A-Z, &, |, (), ! and spaces\n")
         io.write("Please enter a valid query\n")
         queryInfo()
         input = io.read("*line")

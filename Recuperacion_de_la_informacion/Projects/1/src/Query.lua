@@ -5,7 +5,7 @@ local Query = {}
 -- Given a subpart of the query, extracts and returns a table of tokens for its later processing
 function getTokens(str)
     tokens = {}
-    for token in str:gmatch "[!&|]" do
+    for token in str:gmatch "[!&|(]" do
         table.insert(tokens, token)
     end
 
@@ -15,6 +15,10 @@ function getTokens(str)
         table.insert(tokens, postingListFound)
     else
         table.insert(tokens, {})
+    end
+
+    for token in str:gmatch "[)]" do
+        table.insert(tokens, token)
     end
 
     return tokens
@@ -104,7 +108,7 @@ function Query.process(query)
         -- Only the ocurrences where a valid operator (&, |) is followed by an optional NOT (!) and a term are considered
         -- The iteration occurs only over those "pairs" (operator [not] word). The rest is ignored.
         -- The pairs are "tokenized" and its valid tokens are pushed into the infixTokens table
-        for pair in queryTail:gmatch "[&|]%s*%(*%s*!*%s*%(*%w+%)*" do
+        for pair in queryTail:gmatch "[&|]%s*%(*%s*!*%s*%(*!*%w+%)*" do
             queryToInterpret = queryToInterpret .. " " .. pair
             for _, token in pairs(getTokens(pair)) do
                 table.insert(infixTokens, token)

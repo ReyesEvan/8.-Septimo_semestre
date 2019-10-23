@@ -142,7 +142,7 @@ function serialize(pl)
         for k,v in pairs(value) do
             --io.write("\t\t\"",k,"\"=",tostring(v),",\n")
             --output = output.."\t\t\""..k.."\"="..tostring(v)..",\n"
-            CF:write("\tC.PL[\"",key,"\"][\"",k,"\"] = true\n")
+            CF:write("\tC.PL[\"", key, "\"][", k, "] = true\n")
         end
         --CF:write("\n\t},\n")
     end
