@@ -6,7 +6,7 @@ CREATE TABLE MAQUINARIA (
     ID              SMALLSERIAL PRIMARY KEY,
     NUMERO          SMALLINT,
     DESCRIPCION     VARCHAR,
-    MARCA           VARCHAR     NOT NULL,
+    MARCA           VARCHAR,
     MODELO          VARCHAR,
     NSERIE          VARCHAR,
     PERIODO         VARCHAR,
