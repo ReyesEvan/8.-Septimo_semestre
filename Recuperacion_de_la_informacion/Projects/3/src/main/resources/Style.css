@@ -1,0 +1,129 @@
+* {
+    bg-light: #f5f5f6;
+    bg-medium: #e1e2e1;
+
+    accent-light: #a7c0cd;
+    accent-dark: #4b636e;
+    accent-primary: #78909c;
+
+    font-light: #fff;
+    font-medium: #424242;
+    font-dark: #000000;
+    /*bg-light: #f5f5f6;*/
+    /*bg-medium: #e1e2e1;*/
+
+    /*accent-light: #c1d5e0;*/
+    /*accent-dark: #62757f;*/
+    /*accent-primary: #90a4ae;*/
+
+    /*font-dark: #000000;*/
+    /*font-light: #fff;*/
+}
+
+.root {
+    -fx-background-color: bg-light;
+ }
+
+.button {
+    -fx-background-color: accent-primary;
+}
+
+.button:hover {
+    -fx-background-color: accent-dark;
+    -fx-cursor: hand;
+    -fx-text-fill: font-light;
+}
+
+.button:disabled {
+    -fx-background-color: accent-light;
+
+}
+
+.combo-box {
+    -fx-background-color: accent-primary;
+}
+
+.combo-box:hover {
+    -fx-background-color: accent-dark;
+    -fx-cursor: hand;
+}
+
+.combo-box:armed {
+    -fx-background-color: accent-primary;
+}
+
+.indexed-cell {
+    -fx-background-color: bg-light;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-text-fill: font-medium;
+    -fx-cursor: hand;
+}
+
+.indexed-cell:odd {
+    -fx-background-color: bg-medium;
+}
+
+.indexed-cell:hover {
+    -fx-text-fill: font-dark;
+    -fx-background-color: accent-light;
+
+}
+
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0.0em;
+    -fx-border-radius: 2.0em;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0.0em;
+    -fx-padding: 0.0 10.0 0.0 0.0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape: " ";
+    -fx-padding: 0.15em 0.0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape: " ";
+    -fx-padding: 0.0 0.15em;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: accent-primary;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+    -fx-background-radius: 2.0em;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: accent-dark;
+    -fx-background-insets: 2.0, 0.0, 0.0;
+    -fx-background-radius: 2.0em;
+}
+
+.article-id {
+    -fx-font-style: italic;
+    -fx-fill: accent-primary;
+}
+
+.article-title {
+    -fx-font-weight: bold;
+    -fx-font-style: oblique;
+    -fx-fill: accent-dark;
+}
+
+.article-match {
+    -fx-font-weight: bold;
+    -fx-fill: accent-primary;
+}
+
+.border-pane .bottom {
+    -fx-padding: 10em;
+}

@@ -2,13 +2,15 @@ var Clothing = (function(d, p) {
 
 	Clothing.counter = ++Clothing.counter || 1
 
-	var id = Clothing.counter
-	var description = d 
-	var price = p
+	const id = Clothing.counter
+	const description = d 
+	const price = p
 
 	return {
-		getID: function() {return id},
-		getDescription: function() {return description},
+		getID() {
+			return id
+		},
+		getDescription: () => {return description},
 		getPrice: function () { return price},
 
 		displayInformation() {
@@ -42,6 +44,9 @@ var Shirt = (function(d, p, s, c) {
 
 var c = Clothing("A", 12)
 c.displayInformation()
+
+console.log(`Get id: ${c.getDescription()}`)
+
 var d = Clothing("B", 10)
 d.displayInformation()
 

@@ -54,7 +54,6 @@ INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (121, 1
 
 
 -- 'Acrilicos precor'           ,                        ,                     ,'Cambio físico'                                                       ,8/12/2019
--- NOTE Is for the three FTS GLIDE
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (126, 1, '2019/8/12', 'Cambio físico');
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (127, 1, '2019/8/12', 'Cambio físico');
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (128, 1, '2019/8/12', 'Cambio físico');
@@ -63,7 +62,7 @@ INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (128, 1
 -- ! FIXME ESPERAR A LOS OTROS DEL GIMNASIO
 
 -- 'Abdominal cruch'            ,                        ,                     ,'Revisión; ajuste de tornilleria'                                   ,8/12/2019
---  NOTE nserie = 314001
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (85, 1, '2019/8/12', 'Revisión; ajuste de tornillería');
 
 -- '2 power mill'               ,                        ,                     ,'Revisión por fallaen carga electrica'                              ,8/14/2019
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (68, 1, '2019/8/14', 'Revisión por falla en carga electrica');
@@ -87,14 +86,30 @@ INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (128, 1
 -- TODO nserie IC-LFIC5B2-01
 
 -- 'Precor'                     ,                        ,                     ,'Cambio de acrilico'                                                ,8/16/2019
--- TODO a los 3 FTS GLIDE
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (126, 1, '2019/8/16', 'Cambio de acrílico');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (127, 1, '2019/8/16', 'Cambio de acrílico');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (128, 1, '2019/8/16', 'Cambio de acrílico');
+
 
 -- 'Power rack (GB)'            ,                        ,                     ,'Cambio de tabla'                                                   ,8/16/2019
 -- ! FIXME Hay 4 Power Rack, se necesita más información - esperamos el otro gimnasio
 
 -- 'Equipos de peso integrado'  ,                        ,                     ,'Ajuste'                                                            ,8/22/2019
--- TODO a toda la zona de peso integrado
--- INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (324, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (77, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (78, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (79, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (80, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (81, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (82, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (83, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (84, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (85, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (86, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (87, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (88, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (89, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (90, 1, '2019/8/22', 'Ajuste');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (91, 1, '2019/8/22', 'Ajuste');
 
 -- 'Pectoral fly'               ,                        ,                     ,'Ajuste y lubricación de tornillos'                                 ,8/22/2019
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (88, 1, '2019/8/22', 'Ajuste y lubricación de tornillos');
@@ -106,21 +121,21 @@ INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (85, 1,
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (84, 1, '2019/8/22', 'Ajuste de eje; guías');
 
 -- 'Gluteo'                     ,                        ,                     ,'Ajuste de chumaceras'                                              ,8/22/2019
--- TODO INSERT INTO MAQUINARIA(NUMERO, DESCRIPCION, MARCA, MODELO, NSERIE, PERIODO, ACTIVO_FIJO, ZONA, PLANTA) VALUES (4, 'GLUTES QUADS '     	, 'PARAMOUNT'       , ''     	, ''        	, ''       	, 'AF/000036', 'PESO LIBRE', 'B');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (134, 1, '2019/8/22', 'Ajuste de chumaceras');
 
 
 -- 'Calf extension'             ,                        ,                     ,'Lubricación de guias'                                              ,8/22/2019
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (77, 1, '2019/8/22', 'Lubricación de guías');
 
 -- 'Leg curl'                   ,                        ,                     ,'Ajuste de chumaceras; lubricación de guias; ajuste de tornilleria' ,8/22/2019
--- TODO leg curl (79)
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (79, 1, '2019/8/22', 'Ajuste de chumaceras; lubricación de guias; ajuste de tornilleria');
 
--- 'Cross trainer integrity'    ,'nshxx110596'           ,                     ,'Ajuste de tapas '                                                  ,9/5/2019
+-- 'Cross trainer integrity'    ,'nshxx110596'           ,                    ,'Ajuste de tapas '                                                  ,9/5/2019
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (48, 1, '2019/9/5', 'Ajuste de tapas');
 
 
 -- 'Leg curl'                   ,'hs-lc0418b008'         ,                     ,'Ajuste de pin selector; reparación de pin para peso adicional'     ,9/5/2019
--- TODO Seated leg curl (78) check* 
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (78, 1, '2019/9/5', 'Ajuste de pin selector; reparación de pin para peso adicional');
 
 -- 'Caminadora integrity'       ,'ns hht121897'          ,                     ,'Instalación de tablero hct 102448'                                 ,9/18/2019
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (12, 1, '2019/9/18', 'Instalación de tablero hct 102448');
@@ -129,7 +144,9 @@ INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (12, 1,
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (18, 1, '2019/9/18', 'Instalación de cable; key pad; kit emsamble; buiuf izquierdo');
 
 -- '3 Cross over (doble polea)' ,                        ,                     ,'Ajuste de tornilleria con loktine '                                ,9/27/2019
--- TODO FTS GLIDE a los tres
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (126, 1, '2019/9/27', 'Ajuste de tornilleria con loktine');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (127, 1, '2019/9/27', 'Ajuste de tornilleria con loktine');
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (128, 1, '2019/9/27', 'Ajuste de tornilleria con loktine');
 
 -- 'Calf extension '            ,'f2cf031401'            ,                     ,'Ajuste de tuerca de cable de stack de peso'                        ,9/27/2019
 INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (77, 1, '2019/9/27', 'Ajuste de tuerca de cable de stack de peso');
@@ -143,7 +160,7 @@ INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (84, 1,
 
 
 -- 'Glute insignia'             ,                        ,                     ,'Lubricación de guias de zancada'                                   ,8/27/2019
---TODO 0319B043
+INSERT INTO MANTENIMIENTO(MAQUINA, PROVEEDOR, FECHA, DESCRIPCION) VALUES (83, 1, '2019/9/27', 'Lubricación de guías de zancada');
 
 -- 'Plataforma de power rack '  ,                        ,                     ,'Ajuste de gancho'                                                  ,9/27/2019
 -- TODO esperamos al otro gimnasio

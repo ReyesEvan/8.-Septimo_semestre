@@ -1,0 +1,6 @@
+$('.main-content').on('mouseleave', 'ul:last',
+function() {
+$(this).addClass('images')
+}
+                      )
+
